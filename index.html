@@ -166,7 +166,7 @@
       <address class="contact-info">
         <p>
           <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-          <a href="mailto:amir.afkir@icloud.com">amir.afkir@icloud.com</a>
+          <a href="mailto:contact@tonmail.com">amir.afkir@icloud.com</a>
         </p>
         <p>
           <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
@@ -174,44 +174,40 @@
         </p>
         <p>
           <i class="fa-brands fa-github" aria-hidden="true"></i>
-          <a href="https://github.com/Amir-Afkir" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/tonprofil" target="_blank" rel="noopener">GitHub</a>
         </p>
       </address>
   
-      <!-- Formulaire Formsubmit -->
-      <form action="https://formsubmit.co/amir.afkir@icloud.com" method="POST" class="contact-form">
-        <!-- Options cachées -->
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="box">
-        <input type="hidden" name="_next" value="https://tondomaine.com/merci.html">
-        <input type="hidden" name="_subject" value="Message depuis ton Portfolio !">
+      <!-- Formulaire Netlify -->
+      <form name="contact" class="contact-form" netlify netlify-honeypot="bot-field">
+        <!-- honeypot -->
+        <div hidden>
+          <label>Ne pas remplir
+            <input name="bot-field" />
+          </label>
+        </div>
   
-        <!-- Nom -->
         <div class="form-group">
           <label for="name">Nom&nbsp;*</label>
-          <input type="text" id="name" name="name" required autocomplete="name" />
+          <input type="text" id="name" name="name" required autocomplete="name" aria-required="true" />
         </div>
   
-        <!-- Email -->
         <div class="form-group">
           <label for="email">E-mail&nbsp;*</label>
-          <input type="email" id="email" name="email" required autocomplete="email" />
+          <input type="email" id="email" name="email" required autocomplete="email" aria-required="true" />
         </div>
   
-        <!-- Message -->
         <div class="form-group">
           <label for="message">Message&nbsp;*</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
+          <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
         </div>
   
-        <!-- Bouton d'envoi -->
         <button type="submit" class="btn-primary" aria-label="Envoyer le message">
           <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Envoyer
         </button>
       </form>
     </div>
   </section>
-  
   
 
   <footer class="site-footer">
