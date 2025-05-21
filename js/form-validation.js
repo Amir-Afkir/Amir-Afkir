@@ -3,24 +3,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const fields = form.querySelectorAll("input[required], textarea[required]");
     const successMsg = form.querySelector(".form-success");
   
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
       let formIsValid = true;
-      successMsg.textContent = ""; // Réinitialise le message de succès
+      successMsg.textContent = "";
   
+      // Validation simple
       fields.forEach((field) => {
         const error = field.parentElement.querySelector(".form-error");
-        error.style.display = "none"; // Réinitialise l'affichage
-  
+        error.style.display = "none";
         const value = field.value.trim();
   
         if (!value) {
-          e.preventDefault();
           error.style.display = "block";
           formIsValid = false;
         } else if (field.type === "email") {
           const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
           if (!emailRegex.test(value)) {
-            e.preventDefault();
             error.textContent = "Veuillez saisir un email valide.";
             error.style.display = "block";
             formIsValid = false;
@@ -28,13 +27,24 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
   
-      if (!formIsValid) {
-        e.preventDefault(); // bloque uniquement si invalide
-      } else {
-        // Optionnel : feedback UX immédiat
-        successMsg.textContent = "✅ Merci ! Votre message est en cours d'envoi...";
+      if (!formIsValid) return;
+  
+      // Envoi manuel à Netlify via fetch
+      const formData = new FormData(form);
+  
+      try {
+        await fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString(),
+        });
+  
+        successMsg.textContent = "✅ Merci ! Votre message a bien été envoyé.";
         successMsg.style.color = "#0f9d58";
-        // Ne bloque pas le submit → Netlify prend le relais
+        form.reset();
+      } catch (error) {
+        successMsg.textContent = "❌ Une erreur est survenue. Veuillez réessayer.";
+        successMsg.style.color = "#d32f2f";
       }
     });
   });
