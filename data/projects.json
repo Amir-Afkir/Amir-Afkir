@@ -1,0 +1,181 @@
+[
+  {
+    "id": "Camabike",
+    "title": "Camabike",
+    "description": "Site e-commerce pour la vente de vélos et trottinettes électriques, avec intégration CMS, SEO technique et tunnel d'achat optimisé.",
+    "features": [
+      "WordPress & Woocommerce",
+      "Optimisation mobile",
+      "Référencement SEO"
+    ],
+    "image": "./images/Camabike/Camabike.webp",
+    "demo": "https://camabike.com",
+    "gallery": [
+      "./images/Camabike/Camabike2.png",
+      "./images/Camabike/Camabike3.png",
+      "./images/Camabike/Camabike4.png"
+    ],
+    "details": {
+      "objectif": "Vendre des produits de mobilité urbaine",
+      "stack": "WordPress, Woocommerce, Elementor, HTML/CSS",
+      "challenges": "Optimisation produit, navigation fluide"
+    }
+  },
+  {
+    "id": "zombieworld",
+    "title": "ZombieWorld",
+    "description": "Un jeu d'action basé sur la géographie réelle, où le joueur explore une carte dynamique et affronte des zombies. Génération procédurale, exploitation des données Mapbox, système de construction modulaire.",
+    "features": [
+      "Création de personnage",
+      "Génération de map en temps réel",
+      "Optimisé responsive et performance"
+    ],
+    "image": "./images/zombieworld/zombieworld.jpg",
+    "demo": "https://playcanv.as/p/d40a9811/",
+    "code": "https://playcanvas.com/project/1245784/overview/zombieworld",
+    "gallery": [
+      "./images/zombieworld/camagame-gameplay3.jpeg",
+      "./images/zombieworld/camagame-gameplay2.jpeg",
+      "./images/zombieworld/camagame-gameplay.jpeg"
+    ],
+    "details": {
+      "objectif": "Créer une map illimitée",
+      "stack": "JavaScript, Mapbox, Playcanvas",
+      "challenges": "Performance, fluidité, modularité"
+    }
+  },
+  {
+    "id": "grimoire",
+    "title": "Mon Vieux Grimoire",
+    "description": "Application back-end sécurisée pour la gestion et la notation de livres. Upload d'image, compression, et sécurisation des accès utilisateurs.",
+    "features": [
+      "Authentification sécurisée",
+      "Gestion de fichiers avec Sharp"
+    ],
+    "image": "./images/monvieuxgrimoire/monvieuxgrimoire.jpg",
+    "code": "https://github.com/Amir-Afkir/Le-Vieux-Grimoire/",
+    "gallery": [
+      "./images/monvieuxgrimoire/grimoire-1.jpg",
+      "./images/monvieuxgrimoire/grimoire-2.jpg"
+    ],
+    "details": {
+      "objectif": "Plateforme sécurisée de critiques de livres",
+      "stack": "Node.js, Express, MongoDB, JWT, Sharp",
+      "challenges": "Upload sécurisé, compression, gestion d'auth"
+    }
+  },
+  {
+    "id": "booki",
+    "title": "booki",
+    "description": "Projet d'intégration HTML/CSS. Site vitrine responsive présentant des hébergements et activités d’une ville touristique.",
+    "features": [
+      "Responsive mobile",
+      "Flexbox & Grid",
+      "HTML sémantique"
+    ],
+    "image": "./images/booki/booki.jpg",
+
+    "demo": "https://amir-afkir.github.io/booki/",
+    "code": "https://github.com/Amir-Afkir/Booki",
+    "gallery": [
+      "./images/booki/booki-1.jpg",
+      "./images/booki/booki-2.jpg"
+    ],
+    "details": {
+        "objectif": "Appliquer les bases HTML/CSS",
+        "stack": "HTML5, CSS3",
+        "challenges": "Structure responsive, bonnes pratiques"
+      }
+  },
+  {
+    "id": "sophie-bluel",
+    "title": "Sophie Bluel - Architecte",
+    "description": "Projet de back-office permettant la gestion des projets via une API, avec authentification et interface dynamique.",
+    "features": [
+      "Appel API REST",
+      "Filtrage dynamique",
+      "Authentification admin"
+    ],
+    "image": "./images/sophie-bluel/sophie-bluel.jpg",
+
+    "code": "https://github.com/Amir-Afkir/sophie-bluel",
+    "gallery": [
+      "./images/sophie-bluel/sophie-bluel-1.jpg",
+      "./images/sophie-bluel/sophie-bluel-2.jpg"
+    ],
+    "details": {
+        "objectif": "Créer un dashboard administrateur",
+        "stack": "JavaScript, HTML/CSS, API REST",
+        "challenges": "Séparation admin/public, accessibilité"
+      }
+  },
+  {
+    "id": "nina-carducci",
+    "title": "Nina Carducci",
+    "description": "Optimisation SEO et performance d’un site de photographe professionnelle. Audit Lighthouse, accessibilité et technique SEO.",
+    "features": [
+      "Amélioration SEO",
+      "Optimisation Lighthouse",
+      "Accessibilité web"
+    ],
+    "image": "./images/nina/nina.jpg",
+
+    "demo": "https://amir-afkir.github.io/nina-carducci/",
+    "code": "https://github.com/Amir-Afkir/Nina-Carducci",
+    "gallery": [
+      "./images/Nina-Carducci/Nina-Carducci-1.jpg",
+      "./images/Nina-Carducci/Nina-Carducci-2.jpg"
+    ],
+    "details": {
+        "objectif": "Améliorer la visibilité du site",
+        "stack": "HTML, CSS, JS, SEO",
+        "challenges": "Réduction des temps de chargement, score SEO"
+      }
+    },
+    {
+    "id": "kasa",
+    "title": "Kasa",
+    "description": "Développement d'une application React pour la location immobilière avec routing dynamique et composants modulaires.",
+    "features": [
+      "React & Routing",
+      "Props & composants dynamiques",
+      "Responsive & UX"
+    ],
+      "image": "./images/kasa/kasa.jpg",
+  
+      "demo": "https://amir-afkir.github.io/kasa/",
+      "code": "https://github.com/Amir-Afkir/kasa",
+      "gallery": [
+        "./images/kasa/kasa1.jpg",
+        "./images/kasa/kasa2.jpg"
+      ],
+      "details": {
+        "objectif": "Affichage dynamique de logements",
+        "stack": "React.js, JSX, Sass",
+        "challenges": "Architecture composants, routing, props"
+      }
+    },
+    {
+    "id": "menu-maker",
+    "title": "Menu Maker",
+    "description": "Back-office pour un restaurant permettant la création, modification et publication de menus personnalisés. Gestion CRUD complète.",
+    "features": [
+      "CRUD API",
+      "Gestion dynamique des menus",
+      "Sécurité & JWT"
+    ],
+      "image": "./images/menu-maker/menu-maker.jpg",
+  
+      "demo": "https://amir-afkir.github.io/menu-maker/",
+      "code": "https://github.com/Amir-Afkir/menu-maker",
+      "gallery": [
+        "./images/menu-maker/menu-maker1.jpg",
+        "./images/menu-maker/menu-maker2.jpg"
+      ],
+      "details": {
+        "objectif": "Plateforme de gestion de menus",
+        "stack": "Node.js, MongoDB, Express, JWT",
+        "challenges": "Routes protégées, manipulation des données"
+      }
+    }
+]

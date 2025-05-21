@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio – Amir Afkir</title>
+  <meta name="description" content="Portfolio de Amir Afkir, développeur web fullstack. Découvrez mes projets ZombieWorld et Mon Vieux Grimoire, mes compétences et comment me contacter." />
+  <meta property="og:title" content="Amir Afkir – Portfolio Web" />
+  <meta property="og:description" content="Explorez mes réalisations en développement web fullstack : ZombieWorld, Mon Vieux Grimoire et plus." />
+  <meta property="og:image" content="https://tondomaine.com/preview.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="./favicon.ico" />
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" crossorigin="anonymous" />
+
+  <link rel="preload"
+  href="./data/projects.json"
+  as="fetch"
+  type="application/json"
+  crossorigin="anonymous">
+
+</head>
+<body>
+  <div class="main-container">
+
+    <header>
+        <div class="logo">
+          <h1>Amir AFKIR</h1>
+        </div>
+        <button id="menu-btn" class="menu-btn" aria-label="Ouvrir le menu">
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+          <span class="burger-bar"></span>
+        </button>
+        <nav>
+          <ul>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#a-propos">À Propos</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>      
+
+    <!-- ========= SECTION INTRO ========= -->
+<section class="section-intro" id="intro">
+    <div class="intro-content">
+      <h2>
+        Développeur&nbsp;Web <span class="accent">Fullstack</span>
+      </h2>
+  
+      <p>
+        Bienvenue sur mon portfolio&nbsp;! Passionné par le code, l’expérience
+        utilisateur et les projets à fort impact, voici un aperçu de mes
+        réalisations.
+      </p>
+  
+      <div class="intro-actions">
+        <!-- bouton primaire -->
+        <a href="#contact"
+           class="btn-intro btn--primary"
+           aria-label="Me contacter">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          Contactez-moi
+        </a>
+  
+        <!-- bouton secondaire -->
+        <a href="https://github.com/Amir-Afkir"
+           target="_blank"
+           rel="noopener"
+           class="btn-intro btn--secondary"
+           aria-label="Voir mon profil GitHub (nouvel onglet)">
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+          Voir sur GitHub
+        </a>
+  
+        <!-- bouton téléchargement (ghost) -->
+        <a href="./docs/CV-Amir-Afkir.pdf"
+           download
+           class="btn-intro btn--ghost"
+           aria-label="Télécharger mon CV (PDF)">
+          <i class="fa-solid fa-download" aria-hidden="true"></i>
+          Télécharger mon CV
+        </a>
+      </div>
+    </div>
+  
+    <div class="intro-portrait">
+      <img src="./images/Amir/Amir.jpg"
+           alt="Portrait d’Amir Afkir"
+           loading="lazy">
+    </div>
+  </section>
+  
+      
+
+    <section id="projets" class="section-projets">
+      <h2 class="section-title">Mes projets</h2>
+      <div id="project-container"></div>
+    </section>
+
+    <section id="competences" class="section-competences">
+      <h2 class="section-title">Mes compétences</h2>
+      <div class="competence-grid">
+        <div class="competence-card">
+          <h3><i class="fa-solid fa-code"></i> Front-End</h3>
+          <p>HTML5, CSS3 (Flexbox/Grid), JavaScript ES6+, React.js, responsive et accessibilité.</p>
+        </div>
+        <div class="competence-card">
+          <h3><i class="fa-solid fa-server"></i> Back-End</h3>
+          <p>Node.js, Express, MongoDB, API REST, authentification (JWT, bcrypt), gestion de fichiers.</p>
+        </div>
+        <div class="competence-card">
+          <h3><i class="fa-solid fa-tools"></i> Outils</h3>
+          <p>Git, GitHub, VS Code, Figma, Miro, Postman, npm, Lottie, PlayCanvas, Mapbox, Vercel, MongoDB Atlas.</p>
+        </div>
+        <div class="competence-card">
+          <h3><i class="fa-solid fa-check-circle"></i> Bonnes pratiques</h3>
+          <p>SEO technique, responsive design, performances web, sécurité back-end, clean code.</p>
+        </div>
+        <div class="competence-card">
+          <h3><i class="fa-solid fa-cart-shopping"></i> CMS & E-commerce</h3>
+          <p>WordPress, Shopify, Wix, WooCommerce.</p>
+        </div>
+        <div class="competence-card">
+          <h3><i class="fa-solid fa-bolt"></i> Soft skills & méthodo</h3>
+          <p>Résolution de bugs, autonomie, rigueur, communication technique claire.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="a-propos" class="section-about">
+        <h2 class="section-title">À propos</h2>
+      
+        <div class="about-container">
+          <div class="about-text">
+            <p>
+              Je m'appelle <strong>Amir Afkir</strong>, développeur web fullstack passionné par la création d'expériences interactives fluides, performantes et humaines.
+            </p>
+            <p>
+              Après plusieurs projets personnels et des formations solides, j'ai conçu des applications allant du back-end sécurisé à des jeux web dynamiques comme <em>ZombieWorld</em>.
+            </p>
+            <p>
+              Je cherche aujourd’hui à <strong>rejoindre une équipe ambitieuse</strong> ou à collaborer en tant que freelance sur des projets innovants.
+            </p>
+          </div>
+      
+          <div class="about-image">
+            <img src="./images/Amir/Amir-voiture.JPG" alt="Portrait de Amir Afkir" />
+          </div>
+        </div>
+      </section>
+      
+
+<!-- =======================================================
+     CONTACT
+======================================================= -->
+<section id="contact" class="section-contact" aria-labelledby="contact-title">
+    <h2 id="contact-title" class="section-title">Me&nbsp;contacter</h2>
+  
+    <div class="contact-card" data-io>
+      <!-- Coordonnées rapides -->
+      <address class="contact-info">
+        <p>
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          <a href="mailto:amir.afkir@icloud.com">amir.afkir@icloud.com</a>
+        </p>
+        <p>
+          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+          <a href="https://linkedin.com/in/tonprofil" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+        <p>
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+          <a href="https://github.com/Amir-Afkir" target="_blank" rel="noopener">GitHub</a>
+        </p>
+      </address>
+  
+      <!-- Formulaire Formsubmit -->
+      <form action="https://formsubmit.co/amir.afkir@icloud.com" method="POST" class="contact-form">
+        <!-- Options cachées -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="box">
+        <input type="hidden" name="_next" value="https://tondomaine.com/merci.html">
+        <input type="hidden" name="_subject" value="Message depuis ton Portfolio !">
+  
+        <!-- Nom -->
+        <div class="form-group">
+          <label for="name">Nom&nbsp;*</label>
+          <input type="text" id="name" name="name" required autocomplete="name" />
+        </div>
+  
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">E-mail&nbsp;*</label>
+          <input type="email" id="email" name="email" required autocomplete="email" />
+        </div>
+  
+        <!-- Message -->
+        <div class="form-group">
+          <label for="message">Message&nbsp;*</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+  
+        <!-- Bouton d'envoi -->
+        <button type="submit" class="btn-primary" aria-label="Envoyer le message">
+          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Envoyer
+        </button>
+      </form>
+    </div>
+  </section>
+  
+  
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>© 2025 Amir Afkir — Tous droits réservés</p>
+      <div class="footer-links">
+        <a href="https://github.com/Amir-Afkir" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/tonprofil" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="./docs/CV-Amir-Afkir.pdf" download><i class="fa-solid fa-file-arrow-down"></i></a>
+      </div>
+    </div>
+  </footer>
+  
+
+  <!-- JS en fin de page -->
+  <script src="./js/menu.js"></script>
+  <script src="./js/projects.js"></script>
+</body>
+</html>
