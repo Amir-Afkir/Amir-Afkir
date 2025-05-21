@@ -159,14 +159,14 @@
      CONTACT
 ======================================================= -->
 <section id="contact" class="section-contact" aria-labelledby="contact-title">
-    <h2 id="contact-title" class="section-title">Me&nbsp;contacter</h2>
+    <h2 id="contact-title" class="section-title">Me contacter</h2>
   
     <div class="contact-card" data-io>
-      <!-- Coordonnées rapides -->
+      <!-- Coordonnées -->
       <address class="contact-info">
         <p>
           <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-          <a href="mailto:contact@tonmail.com">amir.afkir@icloud.com</a>
+          <a href="mailto:amir.afkir@icloud.com">amir.afkir@icloud.com</a>
         </p>
         <p>
           <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
@@ -174,40 +174,45 @@
         </p>
         <p>
           <i class="fa-brands fa-github" aria-hidden="true"></i>
-          <a href="https://github.com/tonprofil" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/Amir-Afkir" target="_blank" rel="noopener">GitHub</a>
         </p>
       </address>
   
       <!-- Formulaire Netlify -->
-      <form name="contact" class="contact-form" netlify netlify-honeypot="bot-field">
-        <!-- honeypot -->
+      <form name="contact" class="contact-form" method="POST" netlify netlify-honeypot="bot-field" novalidate>
+        <!-- honeypot invisible -->
         <div hidden>
-          <label>Ne pas remplir
-            <input name="bot-field" />
-          </label>
+          <label>Ne pas remplir <input name="bot-field" /></label>
+        </div>
+  
+        <input type="hidden" name="form-name" value="contact" />
+  
+        <div class="form-group">
+          <label for="name">Nom <span aria-hidden="true">*</span></label>
+          <input type="text" id="name" name="name" required aria-required="true" />
+          <span class="form-error" aria-live="polite">Veuillez renseigner votre nom.</span>
         </div>
   
         <div class="form-group">
-          <label for="name">Nom&nbsp;*</label>
-          <input type="text" id="name" name="name" required autocomplete="name" aria-required="true" />
+          <label for="email">Email <span aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" required aria-required="true" />
+          <span class="form-error" aria-live="polite">Veuillez saisir un email valide.</span>
         </div>
   
         <div class="form-group">
-          <label for="email">E-mail&nbsp;*</label>
-          <input type="email" id="email" name="email" required autocomplete="email" aria-required="true" />
-        </div>
-  
-        <div class="form-group">
-          <label for="message">Message&nbsp;*</label>
+          <label for="message">Message <span aria-hidden="true">*</span></label>
           <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+          <span class="form-error" aria-live="polite">Veuillez entrer un message.</span>
         </div>
   
-        <button type="submit" class="btn-primary" aria-label="Envoyer le message">
-          <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Envoyer
+        <button type="submit" class="btn-primary">
+          <i class="fa-solid fa-paper-plane"></i> Envoyer
         </button>
+        <div class="form-success" role="status" aria-live="polite"></div>
       </form>
     </div>
   </section>
+  
   
 
   <footer class="site-footer">
@@ -225,5 +230,6 @@
   <!-- JS en fin de page -->
   <script src="./js/menu.js"></script>
   <script src="./js/projects.js"></script>
+  <script src="./js/form-validation.js"></script>
 </body>
 </html>
