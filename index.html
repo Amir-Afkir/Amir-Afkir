@@ -97,10 +97,61 @@
   
       
 
-    <section id="projets" class="section-projets">
-      <h2 class="section-title">Mes projets</h2>
-      <div id="project-container"></div>
-    </section>
+  <section id="projets" class="section-projets">
+    <h2 class="section-title">Mes projets</h2>
+  
+    <div class="project-layout">
+      <!-- Colonne principale avec les projets -->
+      <div class="project-main">
+        <div id="project-container"></div>
+      </div>
+  
+      <!-- Barre latérale de filtres (desktop) -->
+      <aside class="project-sidebar">
+        <ul class="project-filters">
+          <!-- Injecté dynamiquement via JS -->
+        </ul>
+      </aside>
+    </div>
+  
+    <!-- Backdrop pour le bottom-sheet mobile -->
+    <div id="filter-backdrop" class="filter-backdrop"></div>
+  
+    <!-- Bottom-sheet filtres mobile -->
+    <div
+      id="filter-sheet"
+      class="filter-sheet"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="filter-sheet-title"
+    >
+      <button
+        id="filter-close"
+        class="filter-close"
+        aria-label="Fermer les filtres"
+      >&times;</button>
+  
+      <h3 id="filter-sheet-title" class="visually-hidden">
+        Filtres
+      </h3>
+  
+      <ul class="sheet-filters">
+        <!-- Cloné en JS depuis .project-filters -->
+      </ul>
+    </div>
+  
+    <!-- Bouton filtre version mobile (FAB) -->
+    <button
+      id="fab-filter"
+      class="fab-filter"
+      aria-label="Ouvrir les filtres de projets"
+      hidden
+    >
+      <i class="fa-solid fa-filter" aria-hidden="true"></i>
+    </button>
+  </section>
+  
 
     <section id="competences" class="section-competences">
       <h2 class="section-title">Mes compétences</h2>
@@ -228,8 +279,6 @@
   
 
   <!-- JS en fin de page -->
-  <script src="./js/menu.js"></script>
-  <script src="./js/projects.js"></script>
-  <script src="./js/form-validation.js"></script>
+  <script type="module" src="./js/main.js"></script>
 </body>
 </html>

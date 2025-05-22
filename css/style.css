@@ -9,8 +9,16 @@
     --text-light: #666;
     --card-shadow: rgba(0, 0, 0, 0.05);
     --transition: 0.3s ease;
-    --card-shadow-hover: rgba(0, 0, 0, 0.12);
-  }
+
+    --fsb-width: 64px;
+    --fbtn-size: 48px;
+    --fgap: 0.75rem;
+    --ficon-size: 1.2rem;
+    --fhover-bg: rgba(0, 101, 252, 0.1);
+    --factive-shadow: 0 4px 12px rgba(0, 101, 252, 0.3); 
+    --msb-height: 60px;
+    --msb-padding: 0 1rem;
+    }
   
   * {
     margin: 0;
@@ -226,11 +234,295 @@ header {
     transform: translateY(-2px);
   }
   
-  
   .btn-intro i {
     font-size: 1rem;
   }
 
+/* ======== VARIABLES SPÉCIFIQUES FILTRES ======== */
+  .project-layout {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-top: 2rem;
+  }
+  
+  .project-main {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  /* Barre latérale compacte */
+  .project-sidebar {
+    width: var(--fsb-width);
+    position: sticky;
+    top: 100px;
+    background: #f9f9f9;
+    padding: 0.5rem;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    overflow: visible;
+    z-index: 10;
+  }
+  
+  .project-filters {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--fgap);
+    align-items: flex-end;
+  }
+  
+  .project-filters li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: var(--fbtn-size);
+    height: var(--fbtn-size);
+    padding: 0;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    background: #fff;
+    border: 1px solid var(--primary-color);
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    transform-origin: right center;
+    transition:
+      width 0.3s ease,
+      border-color 0.3s ease,
+      background-color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
+  }
+  
+  .project-filters li i {
+    font-size: var(--ficon-size);
+  }
+  
+  /* Texte masqué par défaut */
+  .project-filters li span {
+    display: none;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Hover feedback */
+  .project-filters li:hover {
+    background-color: var(--fhover-bg);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+  }
+  
+  /* Expansion hover & actif */
+  .project-filters li:hover,
+  .project-filters li.active {
+    width: auto ;
+    height:var(--fbtn-size);
+    padding: 0 0.75rem;
+    border-radius: 24px;
+  }
+  
+  /* Affiche le texte */
+  .project-filters li:hover span,
+  .project-filters li.active span {
+    display: inline-block;
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  /* État actif */
+  .project-filters li.active {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+    box-shadow: var(--factive-shadow);
+  }
+  
+/* =============================
+   1) BACKDROP derrière le sheet
+   ============================= */
+   #filter-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 25;
+  }
+  #filter-backdrop.show {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 100;
+  }
+  
+  /* ===========
+     2) BOTTOM SHEET
+     =========== */
+  .filter-sheet {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: 80vh;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(0.25, 1.25, 0.5, 1);
+    z-index: 101;
+    overflow-y: auto;
+    padding: 1rem;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    scroll-snap-type: y mandatory;
+  }
+  .filter-sheet.show {
+    transform: translateY(0);
+    scroll-snap-align: start;
+  }
+  .filter-sheet::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 4px;
+    background: #ccc;
+    border-radius: 2px;
+    margin: 0.5rem auto;
+  }
+  
+  /* === Close button === */
+  .filter-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--text-dark);
+    transition: color 0.2s ease;
+  }
+  .filter-close:hover,
+  .filter-close:focus {
+    color: var(--primary-color);
+  }
+  
+  /* ======================
+     3) Liste des filtres
+     ====================== */
+  .sheet-filters {
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+  .sheet-filters li {
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeUp 0.4s forwards;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    background: #f4f4f4;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  }
+  .sheet-filters li::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.8s ease;
+  }
+  .sheet-filters li:active::after {
+    transform: translate(-50%, -50%) scale(20);
+    opacity: 1;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+  }
+  .sheet-filters li:hover {
+    transform: translateY(-2px);
+  }
+  .sheet-filters li.active {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 101, 252, 0.3);
+  }
+  
+  /* ========
+     4) Animations
+     ======== */
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* =========
+     5) FAB mobile
+     ========= */
+  .fab-filter {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    z-index: 40; /* devant le sheet */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .fab-filter.show {
+    opacity: 1;
+    pointer-events: auto; 
+  }
+  
+  /* === Cache en desktop === */
+  @media (min-width: 769px) {
+    #filter-backdrop,
+    .fab-filter, .filter-sheet {
+      display: none !important;
+    }
+  }
+  
+  
 /* ======== PROJETS ======== */
 .section-projets .section-title {
     text-align: center;
@@ -774,6 +1066,11 @@ header {
     .contact-card {
       padding: 1.5rem;
     }
+
+    /* === Barre Filtre verticale === */
+    .project-sidebar {
+        display: none;
+      }
   }
   
 /* ======== TABLETTE (769px à 1024px) ======== */
@@ -862,23 +1159,42 @@ header {
       justify-content: flex-start;
     }
   
-    /* === À propos === */
-    .about-container {
-      flex-direction: column;
-      text-align: center;
-      padding: 0 2rem;
-    }
+/* === À propos (TABLETTE) === */
+.about-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding: 0 2rem;
+    gap: 3rem;
+  }
   
-    .about-image img {
-      max-width: 200px;
-      margin: 0 auto;
-    }
+  .about-text {
+    flex: 1 1 60%;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-dark);
+    max-width: 60ch;
+  }
   
-    .about-text {
-      font-size: 1.05rem;
-      max-width: 60ch;
-      margin: 0 auto;
-    }
+  .about-text strong {
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  .about-image {
+    flex: 1 1 35%;
+    text-align: center;
+  }
+  
+  .about-image img {
+    width: 100%;
+    max-width: 180px;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px var(--card-shadow);
+  }
+  
   
     /* === Contact === */
     .contact-card {

@@ -1,14 +1,18 @@
-document.addEventListener("DOMContentLoaded", () => {
+// fichier : /js/components/FormValidation.js
+
+export function setupContactFormValidation() {
     const form = document.querySelector(".contact-form");
+    if (!form) return;
+  
     const fields = form.querySelectorAll("input[required], textarea[required]");
     const successMsg = form.querySelector(".form-success");
   
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
+  
       let formIsValid = true;
       successMsg.textContent = "";
   
-      // Validation simple
       fields.forEach((field) => {
         const error = field.parentElement.querySelector(".form-error");
         error.style.display = "none";
@@ -18,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
           error.style.display = "block";
           formIsValid = false;
         } else if (field.type === "email") {
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
           if (!emailRegex.test(value)) {
             error.textContent = "Veuillez saisir un email valide.";
             error.style.display = "block";
@@ -29,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
       if (!formIsValid) return;
   
-      // Envoi manuel à Netlify via fetch
       const formData = new FormData(form);
   
       try {
@@ -47,5 +50,5 @@ document.addEventListener("DOMContentLoaded", () => {
         successMsg.style.color = "#d32f2f";
       }
     });
-  });
+  }
   
