@@ -22,8 +22,8 @@ export function setupContactFormValidation() {
           error.style.display = "block";
           formIsValid = false;
         } else if (field.type === "email") {
-          const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
-          if (!emailRegex.test(value)) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(value)) {
             error.textContent = "Veuillez saisir un email valide.";
             error.style.display = "block";
             formIsValid = false;
