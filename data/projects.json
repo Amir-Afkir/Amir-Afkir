@@ -8,7 +8,21 @@
         "Optimisation mobile",
         "Référencement SEO"
       ],
-      "tags": ["CMS", "E-commerce", "SEO"],
+      "date": "2019",
+      "tags": [
+        "cms",
+        "e-commerce",
+        "seo",
+        "wordpress",
+        "woocommerce",
+        "elementor",
+        "responsive",
+        "performance",
+        "ux",
+        "structured-data",
+        "chef-de-projet"
+        ],
+
       "category": "CMS",
       "image": "./images/Camabike/Camabike.webp",
       "demo": "https://camabike.com",
@@ -20,174 +34,267 @@
       "details": {
         "objectif": "Vendre des produits de mobilité urbaine",
         "stack": "WordPress, Woocommerce, Elementor, HTML/CSS",
-        "challenges": "Optimisation produit, navigation fluide"
+        "challenges": "Conception d'un site e-commerce complet et performant (WordPress/WooCommerce) : optimisation mobile, SEO technique, tunnel d’achat fluide. En plus du développement, j’ai géré les partenariats et l’offre produit. Un vrai défi de chef de projet web en autonomie."
       }
     },
     {
-      "id": "zombieworld",
-      "title": "ZombieWorld",
-      "description": "Un jeu d'action basé sur la géographie réelle, où le joueur explore une carte dynamique et affronte des zombies. Génération procédurale, exploitation des données Mapbox, système de construction modulaire.",
-      "features": [
-        "Création de personnage",
-        "Génération de map en temps réel",
-        "Optimisé responsive et performance"
-      ],
-      "tags": ["Jeu", "Fullstack", "Mapbox", "JavaScript"],
-      "category": "Jeux",
-      "image": "./images/zombieworld/zombieworld.jpg",
-      "demo": "https://playcanv.as/p/d40a9811/",
-      "code": "https://playcanvas.com/project/1245784/overview/zombieworld",
-      "gallery": [
-        "./images/zombieworld/camagame-gameplay3.jpeg",
-        "./images/zombieworld/camagame-gameplay2.jpeg",
-        "./images/zombieworld/camagame-gameplay.jpeg"
-      ],
-      "details": {
-        "objectif": "Créer une map illimitée",
-        "stack": "JavaScript, Mapbox, Playcanvas",
-        "challenges": "Performance, fluidité, modularité"
-      }
-    },
+        "id": "zombieworld",
+        "title": "ZombieWorld",
+        "description": "Jeu d'action immersif reposant sur la géographie réelle. Le joueur explore une carte infinie en temps réel, construite dynamiquement grâce aux données Mapbox, et affronte des hordes de zombies. Gameplay modulaire et génération procédurale.",
+        "features": [
+          "Création de personnage",
+          "Carte générée dynamiquement avec Mapbox", 
+          "Construction de bâtiments modulaires"
+        ],
+        "date": "2024",
+        "tags": [
+          "jeu",
+          "playcanvas",
+          "mapbox",
+          "génération-procédurale",
+          "javascript",
+          "modularité",
+          "temps-réel",
+          "géodonnées",
+          "performance"
+        ],
+        "category": "Jeux",
+        "image": "./images/zombieworld/zombieworld.jpg",
+        "demo": "https://playcanv.as/p/d40a9811/",
+        "code": "https://playcanvas.com/project/1245784/overview/zombieworld",
+        "gallery": [
+          "./images/zombieworld/camagame-gameplay3.jpeg",
+          "./images/zombieworld/camagame-gameplay2.jpeg",
+          "./images/zombieworld/camagame-gameplay.jpeg"
+        ],
+        "details": {
+          "objectif": "Créer une expérience de jeu unique et évolutive sur une carte illimitée basée sur la Terre réelle.",
+          "stack": "JavaScript, Mapbox (MVT), PlayCanvas, WebGL",
+          "challenges": "Rendu fluide d’une map géante avec données MVT en temps réel, équilibrage entre performance et esthétique, conception d’un système de bâtiments modulaires auto-générés, et adaptation à la navigation mobile sans latence."
+        }
+      },      
+      {
+        "id": "grimoire",
+        "title": "Mon Vieux Grimoire",
+        "description": "Application back-end robuste pour la gestion, la notation et le traitement sécurisé d’une bibliothèque de livres. Développée dans un souci de performance, de sécurité et d’éco-conception.",
+        "features": [
+          "Inscription et connexion sécurisées avec JWT & bcrypt",
+          "Upload d'images avec Multer et compression via Sharp",
+          "Calcul automatique des moyennes de notation"
+        ],
+        "date": "2025",
+        "tags": [
+          "node.js",
+          "express",
+          "mongodb",
+          "jwt",
+          "authentification",
+          "bcrypt",
+          "sharp",
+          "multer",
+          "green-code",
+          "api-rest",
+          "sécurité",
+          "backend"
+        ],
+        "category": "Back-end",
+        "image": "./images/monvieuxgrimoire/monvieuxgrimoire.jpg",
+        "code": "https://github.com/Amir-Afkir/Le-Vieux-Grimoire/",
+        "gallery": [
+          "./images/monvieuxgrimoire/grimoire-1.jpg",
+          "./images/monvieuxgrimoire/grimoire-2.jpg"
+        ],
+        "details": {
+          "objectif": "Développer une API sécurisée et respectueuse des bonnes pratiques pour la gestion d’un service de notation de livres, dans le cadre d’un projet de formation OpenClassrooms.",
+          "stack": "Node.js, Express, MongoDB (Mongoose), JWT, Multer, Sharp",
+          "challenges": "Implémenter un système de notation unique par utilisateur, sécuriser toutes les routes sensibles, compresser les images uploadées pour limiter l'empreinte écologique, structurer proprement les middlewares, contrôleurs et modèles selon le principe de séparation des responsabilités."
+        }
+      },      
+      {
+        "id": "booki",
+        "title": "Booki",
+        "description": "Site vitrine responsive pour une agence de voyage fictive. Intégration complète en HTML5 et CSS3 à partir de maquettes Figma, avec une attention particulière portée à la sémantique, à l'accessibilité, et à la structure responsive.",
+        "features": [
+          "Intégration à partir de maquettes Figma (desktop, tablette, mobile)",
+          "Mise en page responsive avec Flexbox & Media Queries",
+          "Navigation ancrée et structurée"
+        ],
+        "date": "2025",
+        "tags": [
+          "html",
+          "css",
+          "responsive",
+          "figma",
+          "accessibilité",
+          "flexbox",
+          "media-queries",
+          "intégration",
+          "front-end",
+          "sémantique"
+        ],
+        "category": "Front-end",
+        "image": "./images/booki/booki.jpg",
+        "demo": "https://amir-afkir.github.io/booki/",
+        "code": "https://github.com/Amir-Afkir/Booki",
+        "gallery": [
+          "./images/booki/booki-1.jpg",
+          "./images/booki/booki-2.jpg",
+          "./images/booki/booki-3.jpg"
+        ],
+        "details": {
+          "objectif": "Traduire fidèlement des maquettes Figma en une interface web responsive, tout en respectant les bonnes pratiques HTML/CSS et les critères d’accessibilité.",
+          "stack": "HTML5, CSS3, Git, GitHub",
+          "challenges": "Respect pixel-perfect des maquettes, mise en page fluide en Flexbox avec adaptation mobile, organisation claire du CSS, gestion fine des espacements, et structuration sémantique du HTML pour l’accessibilité et le SEO."
+        }
+      },
+      {
+        "id": "sophie-bluel",
+        "title": "Sophie Bluel - Architecte d'intérieur",
+        "description": "Interface d'administration full-stack pour la gestion dynamique du portfolio de l'architecte, incluant authentification sécurisée et gestion CRUD des projets.",
+        "features": [
+          "Gestion CRUD des projets via API REST",
+          "Filtrage et affichage dynamiques",
+          "Validation et gestion des formulaires"
+        ],
+        "date": "2025",
+        "tags": [
+          "full-stack",
+          "javascript",
+          "html5",
+          "css3",
+          "fetch-api",
+          "jwt",
+          "modals",
+          "accessibilité",
+          "ux-ui",
+          "api-rest"
+        ],
+        "category": "Back-end",
+        "image": "./images/sophie-bluel/sophie-bluel.jpg",
+        "demo": "https://sophie-bluel.archiwebos.com",
+        "code": "https://github.com/Amir-Afkir/sophie-bluel",
+        "gallery": [
+          "./images/sophie-bluel/sophie-bluel-1.jpg",
+          "./images/sophie-bluel/sophie-bluel-2.jpg",
+          "./images/sophie-bluel/sophie-bluel-3.jpg"
+        ],
+        "details": {
+          "objectif": "Offrir au client une interface intuitive pour gérer son portfolio en autonomie",
+          "stack": "Vanilla JavaScript, HTML5, CSS3, Fetch API, JWT",
+          "challenges": "Implémentation d'une authentification robuste avec gestion du token côté client, conception d'une modal dynamique pour l'ajout de médias, synchronisation temps réel du DOM après opérations CRUD, et respect des standards d'accessibilité WCAG."
+        }
+      },
+      {
+        "id": "nina-carducci",
+        "title": "Nina Carducci",
+        "description": "Optimisation SEO, performance et accessibilité d’un site de photographe professionnelle : audit Lighthouse, refactoring front-end, données structurées et bonnes pratiques web.",
+        "features": [
+          "Audit SEO complet (métadonnées, balises sémantiques)",
+          "Optimisation performance (Lighthouse & Web Vitals)",
+          "Amélioration accessibilité WCAG 2.1"
+        ],
+        "date": "2023",
+        "tags": [
+          "seo",
+          "performance",
+          "accessibilité",
+          "lighthouse",
+          "json-ld",
+          "audit",
+          "webperf",
+          "structured-data",
+          "mobile-first",
+          "balises-meta"
+        ],
+        "category": "SEO",
+        "image": "./images/nina/nina.jpg",
+        "demo": "https://amir-afkir.github.io/nina-carducci/",
+        "code": "https://github.com/Amir-Afkir/Nina-Carducci",
+        "gallery": [
+          "./images/Nina-Carducci/Nina-Carducci-1.jpg",
+          "./images/Nina-Carducci/Nina-Carducci-2.jpg"
+        ],
+        "details": {
+          "objectif": "Accroître la visibilité organique et améliorer l'expérience utilisateur du site de Nina Carducci, photographe à Bordeaux.",
+          "stack": "HTML5, CSS3, JavaScript, Bootstrap, Google Lighthouse, Google Search Console, Screaming Frog",
+          "challenges": "Réduire le Largest Contentful Paint sous 2,5s, corriger le Cumulative Layout Shift, atteindre 100 % d’accessibilité WCAG 2.1, minifier et compresser CSS/JS/images, implémenter un schéma JSON-LD LocalBusiness et configurer les balises Open Graph."
+        }
+      },
     {
-      "id": "grimoire",
-      "title": "Mon Vieux Grimoire",
-      "description": "Application back-end sécurisée pour la gestion et la notation de livres. Upload d'image, compression, et sécurisation des accès utilisateurs.",
-      "features": [
-        "Authentification sécurisée",
-        "Gestion de fichiers avec Sharp"
-      ],
-      "tags": ["Node.js", "Back-end", "Sécurité"],
-      "category": "Back-end",
-      "image": "./images/monvieuxgrimoire/monvieuxgrimoire.jpg",
-      "code": "https://github.com/Amir-Afkir/Le-Vieux-Grimoire/",
-      "gallery": [
-        "./images/monvieuxgrimoire/grimoire-1.jpg",
-        "./images/monvieuxgrimoire/grimoire-2.jpg"
-      ],
-      "details": {
-        "objectif": "Plateforme sécurisée de critiques de livres",
-        "stack": "Node.js, Express, MongoDB, JWT, Sharp",
-        "challenges": "Upload sécurisé, compression, gestion d'auth"
-      }
-    },
-    {
-      "id": "booki",
-      "title": "booki",
-      "description": "Projet d'intégration HTML/CSS. Site vitrine responsive présentant des hébergements et activités d’une ville touristique.",
-      "features": [
-        "Responsive mobile",
-        "Flexbox & Grid",
-        "HTML sémantique"
-      ],
-      "tags": ["Front-end", "HTML", "CSS"],
-      "category": "Front-end",
-      "image": "./images/booki/booki.jpg",
-      "demo": "https://amir-afkir.github.io/booki/",
-      "code": "https://github.com/Amir-Afkir/Booki",
-      "gallery": [
-        "./images/booki/booki-1.jpg",
-        "./images/booki/booki-2.jpg"
-      ],
-      "details": {
-        "objectif": "Appliquer les bases HTML/CSS",
-        "stack": "HTML5, CSS3",
-        "challenges": "Structure responsive, bonnes pratiques"
-      }
-    },
-    {
-      "id": "sophie-bluel",
-      "title": "Sophie Bluel - Architecte",
-      "description": "Projet de back-office permettant la gestion des projets via une API, avec authentification et interface dynamique.",
-      "features": [
-        "Appel API REST",
-        "Filtrage dynamique",
-        "Authentification admin"
-      ],
-      "tags": ["Front-end", "Back-end", "API", "JavaScript"],
-      "category": "Back-end", 
-      "image": "./images/sophie-bluel/sophie-bluel.jpg",
-      "code": "https://github.com/Amir-Afkir/sophie-bluel",
-      "gallery": [
-        "./images/sophie-bluel/sophie-bluel-1.jpg",
-        "./images/sophie-bluel/sophie-bluel-2.jpg"
-      ],
-      "details": {
-        "objectif": "Créer un dashboard administrateur",
-        "stack": "JavaScript, HTML/CSS, API REST",
-        "challenges": "Séparation admin/public, accessibilité"
-      }
-    },
-    {
-      "id": "nina-carducci",
-      "title": "Nina Carducci",
-      "description": "Optimisation SEO et performance d’un site de photographe professionnelle. Audit Lighthouse, accessibilité et technique SEO.",
-      "features": [
-        "Amélioration SEO",
-        "Optimisation Lighthouse",
-        "Accessibilité web"
-      ],
-      "tags": ["SEO", "Performance", "Audit"],
-      "category": "SEO",
-      "image": "./images/nina/nina.jpg",
-      "demo": "https://amir-afkir.github.io/nina-carducci/",
-      "code": "https://github.com/Amir-Afkir/Nina-Carducci",
-      "gallery": [
-        "./images/Nina-Carducci/Nina-Carducci-1.jpg",
-        "./images/Nina-Carducci/Nina-Carducci-2.jpg"
-      ],
-      "details": {
-        "objectif": "Améliorer la visibilité du site",
-        "stack": "HTML, CSS, JS, SEO",
-        "challenges": "Réduction des temps de chargement, score SEO"
-      }
-    },
-    {
-      "id": "kasa",
-      "title": "Kasa",
-      "description": "Développement d'une application React pour la location immobilière avec routing dynamique et composants modulaires.",
-      "features": [
-        "React & Routing",
-        "Props & composants dynamiques",
-        "Responsive & UX"
-      ],
-      "tags": ["React", "Front-end", "UX"],
-      "category": "Front-end",
-      "image": "./images/kasa/kasa.jpg",
-      "demo": "https://amir-afkir.github.io/kasa/",
-      "code": "https://github.com/Amir-Afkir/kasa",
-      "gallery": [
-        "./images/kasa/kasa1.jpg",
-        "./images/kasa/kasa2.jpg"
-      ],
-      "details": {
-        "objectif": "Affichage dynamique de logements",
-        "stack": "React.js, JSX, Sass",
-        "challenges": "Architecture composants, routing, props"
-      }
-    },
-    {
-      "id": "menu-maker",
-      "title": "Menu Maker",
-      "description": "Back-office pour un restaurant permettant la création, modification et publication de menus personnalisés. Gestion CRUD complète.",
-      "features": [
-        "CRUD API",
-        "Gestion dynamique des menus",
-        "Sécurité & JWT"
-      ],
-      "tags": ["Node.js", "Back-end", "MongoDB"],
-      "category": "Back-end",
-      "image": "./images/menu-maker/menu-maker.jpg",
-      "demo": "https://amir-afkir.github.io/menu-maker/",
-      "code": "https://github.com/Amir-Afkir/menu-maker",
-      "gallery": [
-        "./images/menu-maker/menu-maker1.jpg",
-        "./images/menu-maker/menu-maker2.jpg"
-      ],
-      "details": {
-        "objectif": "Plateforme de gestion de menus",
-        "stack": "Node.js, MongoDB, Express, JWT",
-        "challenges": "Routes protégées, manipulation des données"
-      }
-    }
+            "id": "kasa",
+            "title": "Kasa",
+            "description": "Développement complet d’une application front-end en React pour un site de location immobilière. L’application intègre un système de routage dynamique avec React Router, un affichage des données depuis un fichier JSON, et des composants modulaires pour une architecture maintenable et évolutive.",
+            "features": [
+            "Application React avec routing dynamique (SPA)",
+            "Composants réutilisables (Card, Slideshow, Collapse)",
+            "Responsive design et stylisation en Sass"
+            ],
+            "date": "2025",
+            "tags": [
+              "react",
+              "spa",
+              "jsx",
+              "sass",
+              "router",
+              "responsive",
+              "ux",
+              "routing",
+              "state",
+              "props",
+              "accessibilité"
+            ],
+            "category": "Front-end",
+            "image": "./images/kasa/kasa.jpg",
+            "demo": "https://amir-afkir.github.io/kasa/",
+            "code": "https://github.com/Amir-Afkir/kasa",
+            "gallery": [
+              "./images/kasa/kasa1.jpg",
+              "./images/kasa/kasa2.jpg"
+            ],
+            "details": {
+              "objectif": "Développer une application réactive et responsive pour un site de location immobilière, basée sur des maquettes Figma et un jeu de données JSON, avec une navigation fluide et une structure maintenable.",
+              "stack": "React.js, React Router, JSX, Sass (SCSS), JSON",
+              "challenges": "Affichage dynamique des données, implémentation d’un système de routing complet avec gestion d'erreurs (page 404), création de composants réutilisables, logique de collapse interactive, et adaptation du design aux formats mobiles."
+            }
+          },
+          {
+            "id": "menu-maker",
+            "title": "Menu Maker",
+            "description": "Rédaction et planification technique d’un outil de création de menus digitaux pour les restaurateurs. Projet mené en autonomie selon la méthode Agile, incluant spécifications fonctionnelles, backlog complet, maquettes UI et veille technologique.",
+            "features": [
+              "Rédaction du backlog et des user stories",
+              "Gestion de projet Agile (Kanban, story points)",
+              "Veille technologique continue"
+            ],
+            "date": "2025",
+            "tags": [
+              "documentation",
+              "agile",
+              "kanban",
+              "ux",
+              "figma",
+              "notion",
+              "gestion-de-projet",
+              "backlog",
+              "user-stories",
+              "veille"
+            ],
+            "category": "Back-end",
+            "image": "./images/menu-maker/cover.jpg",
+            "code": "https://github.com/Amir-Afkir/menu-marker",
+            "gallery": [
+              "./images/menu-maker/kanban-board.jpg",
+              "./images/menu-maker/figma.png",
+              "./images/menu-maker/notion-overview.jpg"
+            ],
+            "details": {
+              "objectif": "Structurer le développement d’une application web dédiée aux restaurateurs pour créer et gérer leurs menus numériques.",
+              "stack": "Figma, Notion, Word, Trello, Miro, Feedly",
+              "challenges": "Rédiger une documentation fonctionnelle claire, établir un backlog complet, découper et estimer les tâches en user stories, concevoir l’arborescence technique, et maintenir une veille produit continue. Un vrai exercice de pilotage projet et de synthèse technique."
+            }
+          }
+          
+          
+          
   ]
   

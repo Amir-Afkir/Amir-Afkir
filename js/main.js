@@ -8,10 +8,11 @@ import { setupModalListeners } from './components/ModalListeners.js';
 import { setupContactFormValidation } from './components/FormValidation.js';
 
 
+
 // Point d'entrée de l'application
 document.addEventListener('DOMContentLoaded', () => { 
   setupActiveScrollNavigation();
-  setupContactFormValidation();
+  setupContactFormValidation(); 
 
   fetch('./data/projects.json')
     .then(res => res.json())
