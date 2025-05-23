@@ -1,6 +1,6 @@
 // fichier : ./js/main.js (point d'entrée global ES Module)
 
-import { setupBurgerMenu, setupActiveScrollNavigation } from './menu.js';
+import { setupActiveScrollNavigation } from './menu.js';
 import { generateCategoryFilters, setupCategoryFilterListeners, initMobileFilterSheet } from './filtres.js';
 import { renderProjectCard } from './components/ProjectCard.js';
 import { renderProjectModal } from './components/ProjectModal.js';
@@ -9,8 +9,7 @@ import { setupContactFormValidation } from './components/FormValidation.js';
 
 
 // Point d'entrée de l'application
-document.addEventListener('DOMContentLoaded', () => {
-  setupBurgerMenu();
+document.addEventListener('DOMContentLoaded', () => { 
   setupActiveScrollNavigation();
   setupContactFormValidation();
 

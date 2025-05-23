@@ -1,27 +1,4 @@
 // fichier : ./js/menu.js
-export function setupBurgerMenu() {
-    const menuBtn = document.getElementById('menu-btn');
-    const body = document.body;
-    const nav = document.querySelector('nav ul');
-    const closeBtn = document.getElementById('menu-close'); // Optionnel
-  
-    if (!menuBtn || !nav) return;
-  
-    menuBtn.addEventListener('click', () => {
-      body.classList.toggle('nav-open');
-    });
-  
-    document.addEventListener('click', e => {
-      if (
-        body.classList.contains('nav-open') &&
-        !nav.contains(e.target) &&
-        !menuBtn.contains(e.target) &&
-        (!closeBtn || !closeBtn.contains(e.target))
-      ) {
-        body.classList.remove('nav-open');
-      }
-    });
-  }
   
   export function setupActiveScrollNavigation() {
     const OFFSET = 150;

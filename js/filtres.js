@@ -31,6 +31,7 @@ const ICONS = {
     toList.querySelector(`li[data-filter="${active.dataset.filter}"]`)?.classList.add('active');
   }
   
+  
   // ———————————————————————————————
   // Filtres desktop
   // ———————————————————————————————
@@ -88,19 +89,20 @@ const ICONS = {
     const sheetList = document.querySelector('.sheet-filters');
     const projetsSec = document.getElementById('projets');
   
+    if (!fab || !sheet || !backdrop || !closeBtn || !sidebar || !sheetList || !projetsSec) return;
+  
     sheetList.innerHTML = sidebar.innerHTML;
   
-    new IntersectionObserver(([entry]) => {
+    const observer = new IntersectionObserver(([entry]) => {
       fab.classList.toggle('show', entry.isIntersecting);
-    }, { rootMargin: '-100px' }).observe(projetsSec);
+    }, { rootMargin: '-100px' });
+    observer.observe(projetsSec);
   
     const lockBody = () => document.body.classList.add('no-scroll');
     const unlockBody = () => document.body.classList.remove('no-scroll');
   
-    let isDragging = false;
-  
     function outsideClickHandler(e) {
-      if (!isDragging && !sheet.contains(e.target) && !fab.contains(e.target)) {
+      if (!sheet.contains(e.target) && !fab.contains(e.target)) {
         closeSheet();
       }
     }
@@ -118,17 +120,17 @@ const ICONS = {
   
       syncActiveFilter(sidebar, sheetList);
       document.addEventListener('click', outsideClickHandler);
-      closeBtn.focus();
+      if (closeBtn.offsetParent !== null) closeBtn.focus();
     }
   
     function closeSheet() {
       unlockBody();
-      backdrop.classList.remove('show');
       sheet.classList.remove('show');
       sheet.setAttribute('aria-hidden', 'true');
   
       sheet.addEventListener('transitionend', () => {
         sheet.hidden = true;
+        backdrop.classList.remove('show');
         document.removeEventListener('click', outsideClickHandler);
         fab.classList.add('show');
       }, { once: true });
@@ -154,40 +156,5 @@ const ICONS = {
         setTimeout(() => document.addEventListener('click', outsideClickHandler), 0);
       });
     });
+  }  
   
-    let startY = 0, currentY = 0;
-    const THRESHOLD = sheet.offsetHeight * 0.25;
-    sheet.style.overscrollBehavior = 'contain';
-  
-    sheet.addEventListener('touchstart', e => {
-      isDragging = true;
-      startY = e.touches[0].clientY;
-      sheet.style.transition = 'none';
-      document.removeEventListener('click', outsideClickHandler);
-    }, { passive: false });
-  
-    sheet.addEventListener('touchmove', e => {
-      if (!isDragging) return;
-      currentY = e.touches[0].clientY;
-      const delta = currentY - startY;
-      if (delta > 0 && sheet.scrollTop === 0) {
-        e.preventDefault();
-        sheet.style.transform = `translateY(${delta}px)`;
-      }
-    }, { passive: false });
-  
-    sheet.addEventListener('touchend', () => {
-      sheet.style.transition = 'transform 0.3s ease';
-      const delta = currentY - startY;
-  
-      if (delta > THRESHOLD) {
-        closeSheet();
-      } else {
-        sheet.style.transform = '';
-        sheet.addEventListener('transitionend', () => {
-          if (!sheet.hidden) document.addEventListener('click', outsideClickHandler);
-        }, { once: true });
-      }
-      isDragging = false;
-    }, { passive: false });
-  }

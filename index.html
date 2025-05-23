@@ -28,14 +28,10 @@
 
     <header>
         <div class="logo">
-          <h1>Amir AFKIR</h1>
-        </div>
-        <button id="menu-btn" class="menu-btn" aria-label="Ouvrir le menu">
-          <span class="burger-bar"></span>
-          <span class="burger-bar"></span>
-          <span class="burger-bar"></span>
-        </button>
-        <nav>
+            <h1><span class="logo-part1">Amir</span> <span class="logo-part2">AFKIR</span></h1>
+
+        </div> 
+        <nav aria-label="Navigation principale">
           <ul>
             <li><a href="#projets">Projets</a></li>
             <li><a href="#competences">Compétences</a></li>
@@ -43,6 +39,14 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
+
+        <nav class="bottom-nav" aria-label="Navigation principale mobile">
+            <a href="#projets"><i class="fa-solid fa-diagram-project"></i><span>Projets</span></a>
+            <a href="#competences"><i class="fa-solid fa-laptop-code"></i><span>Compétences</span></a>
+            <a href="#a-propos"><i class="fa-solid fa-user"></i><span>À propos</span></a>
+            <a href="#contact"><i class="fa-solid fa-envelope"></i><span>Contact</span></a>
+          </nav>          
+          
       </header>      
 
     <!-- ========= SECTION INTRO ========= -->
@@ -276,9 +280,7 @@
       </div>
     </div>
   </footer>
-  
-
-  <!-- JS en fin de page -->
-  <script type="module" src="./js/main.js"></script>
+</div>
+<script type="module" src="./js/main.js"></script>
 </body>
 </html>
