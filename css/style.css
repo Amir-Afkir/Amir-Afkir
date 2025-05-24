@@ -341,7 +341,7 @@ header nav ul li a.active::after {
   #filter-backdrop.show {
     opacity: 1;
     pointer-events: auto;
-    z-index: 100;
+    z-index: 30;
   }
   
   /* ===========
@@ -357,7 +357,7 @@ header nav ul li a.active::after {
     backdrop-filter: blur(8px);
     transform: translateY(100%);
     transition: transform 0.5s cubic-bezier(0.25, 1.25, 0.5, 1);
-    z-index: 101;
+    z-index: 99;
     overflow-y: auto;
     padding: 1rem;
     border-top-left-radius: 16px;
@@ -978,10 +978,11 @@ header nav ul li a.active::after {
    ========================================================================== */
 @media (max-width: 768px) {
  
-  .logo h1 {
+/* Logo */
+header h1 {
     justify-content: center;
     text-align: center;
-  }
+}
 
 /* 1) Agrandir la zone tactile pour atteindre ~44×44px minimum */
 header ul li a {
@@ -995,14 +996,13 @@ header ul li a {
   color: var(--text-light);
   padding: 0.75rem 0;           /* ← padding vertical augmenté */
   min-height: 44px;             /* ← impose la hauteur minimale */
-  transition: color var(--transition), background var(--transition) ;
+  transition: color var(--transition), background var(--transition) ; 
 }
 
 /* 2) Indicateur visuel plus visible de l’item actif */
 header ul li a.active,
 header ul li a:hover {
   color: var(--primary-color);
-  background: rgba(0, 101, 252, 0.05);  /* ← léger fond au survol/actif */
 }
 
 header ul li a.active::after {
@@ -1024,7 +1024,7 @@ header {
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #e0e0e0;
-  z-index: 150;
+  z-index: 30;
   padding: 20px 20px 4px;
 }
 
