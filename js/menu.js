@@ -46,3 +46,12 @@
     }
   }
   
+// === Haptic feedback pour les liens de navigation mobile ===
+    document.querySelectorAll('.bottom-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      if ('vibrate' in navigator) {
+        navigator.vibrate(20); // vibration de 20 ms
+      }
+    });
+  });
+  
