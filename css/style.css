@@ -4,7 +4,7 @@
     --secondary-color: #00a1ff;
     --accent-color: #FFB800;
     --bg-light: #f7f7f7;
-    --bg-white: #fff;
+    --bg-white: #fff; 
     --text-dark: #222;
     --text-light: #666;
     --card-shadow: rgba(0, 0, 0, 0.05);
@@ -1022,7 +1022,6 @@ header {
   position: sticky;
   top: 0;
   background: var(--bg-white);
-  backdrop-filter: blur(8px);
   border-bottom: 1px solid #e0e0e0;
   z-index: 30;
   padding: 20px 20px 4px;
