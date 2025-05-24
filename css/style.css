@@ -982,10 +982,9 @@ header {
 .bottom-nav {
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 0; right: 0;
   height: var(--msb-height);
-  padding-bottom: env(safe-area-inset-bottom, 0.5rem);
+  padding-bottom: env(safe-area-inset-bottom, 0);  
   background: rgba(255,255,255,0.9);
   backdrop-filter: blur(8px);
   border-top: 1px solid #e0e0e0;
@@ -994,11 +993,14 @@ header {
   justify-content: space-around;
   align-items: center;
   z-index: 999;
-  }
-    
-  main {
-    margin-bottom: calc(var(--msb-height) + env(safe-area-inset-bottom, 0.5rem));
-    }
+}
+
+/* Contenu principal */
+  main,
+  .main-container {
+  /* toujours laisser la place, iOS safe-area ou fallback 0 + hauteur nav */
+  margin-bottom: calc(var(--msb-height) + env(safe-area-inset-bottom, 0px));
+}
 
   
   .bottom-nav a {
