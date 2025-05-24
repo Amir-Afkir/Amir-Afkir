@@ -979,7 +979,7 @@ header {
       }  
 
 /* ===== NAVIGATION MOBILE ===== */
-  .bottom-nav {
+.bottom-nav {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -994,6 +994,9 @@ header {
     align-items: center;
     z-index: 999;
     padding: 0 0.4rem;
+  
+    /* =====> ici on gère la zone safe en bas <===== */
+    padding-bottom: max(env(safe-area-inset-bottom), 0.5rem);
   }
   
   .bottom-nav a {
