@@ -533,8 +533,10 @@ header nav ul li a.active::after {
   
   .project-card img {
     width: 300px;
-    border-radius: 8px;
+    height: 300px;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
+    border-radius: 8px;
     flex-shrink: 0;
   }
   
