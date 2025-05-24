@@ -7,6 +7,19 @@ import { renderProjectModal } from './components/ProjectModal.js';
 import { setupModalListeners } from './components/ModalListeners.js';
 import { setupContactFormValidation } from './components/FormValidation.js';
 
+// /js/utils/dom.js (ou directement dans main.js)
+export function adjustForBottomNav() {
+  const nav    = document.querySelector('.bottom-nav');
+  const wrapper = document.querySelector('main') || document.querySelector('.main-container');
+  if (!nav || !wrapper) return;
+
+  const height = nav.offsetHeight;
+  wrapper.style.paddingBottom = `${height}px`;
+}
+
+// Appel au démarrage et au resize
+window.addEventListener('DOMContentLoaded', adjustForBottomNav);
+window.addEventListener('resize', adjustForBottomNav);
 
 
 // Point d'entrée de l'application
