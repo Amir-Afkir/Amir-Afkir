@@ -70,65 +70,66 @@
   }
   
   
-/* ======== HEADER ======== */
+/* ==========================================================================
+   HEADER – Desktop
+   ========================================================================== */
 header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background: var(--bg-white);
-    box-shadow: 0 2px 8px var(--card-shadow);
-  }
-  
-  .logo h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    letter-spacing: 1px;
-  }
-  
- 
-  nav ul {
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    list-style: none;
-  }
-  
-  nav ul li a {
-    position: relative;
-    font-weight: 500;
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  nav ul li a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -6px;
-    width: 0;
-    height: 2px;
-    background: var(--primary-color);
-    transition: width 0.3s ease;
-  }
-  
-  nav ul li a:hover::after {
-    width: 100%;
-  }
-  
-  nav ul li a.active {
-    color: var(--accent-color);
-  }
-  
-  nav ul li a.active::after {
-    background: var(--accent-color);
-    width: 100%;
-  }
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: var(--bg-white);
+  box-shadow: 0 2px 8px var(--card-shadow);
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+}
+
+header nav ul {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  list-style: none;
+}
+
+header nav ul li a {
+  position: relative;
+  font-weight: 500;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+header nav ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+  width: 100%;
+}
+
+header nav ul li a.active {
+  color: var(--accent-color);
+}
+
+header nav ul li a.active::after {
+  width: 100%;
+  background: var(--accent-color);
+}
   
 /* ======== INTRODUCTION ======== */
 .section-intro {
@@ -471,7 +472,7 @@ header {
      ========= */
   .fab-filter {
     position: fixed;
-    bottom: 5rem;
+    bottom: 1rem;
     left: 1rem;
     width: 56px;
     height: 56px;
@@ -492,7 +493,7 @@ header {
   .fab-filter.show {
     opacity: 1;
     pointer-events: auto; 
-  }
+  } 
   
   /* === Cache en desktop === */
   @media (min-width: 769px) {
@@ -972,82 +973,78 @@ header {
   }
   
   
-/* ======== RESPONSIVE MOBILE ======== */
+/* ==========================================================================
+   NAVIGATION MOBILE – Responsive (≤ 768px)
+   ========================================================================== */
 @media (max-width: 768px) {
-    nav ul {
-        display: none; 
-      }  
-
-/* ===== NAVIGATION MOBILE ===== */
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0; right: 0;
-  height: var(--msb-height);
-  padding-bottom: 0;
-  background: rgba(255,255,255,0.9);
-  backdrop-filter: blur(8px);
-  border-top: 1px solid #e0e0e0;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.08);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  z-index: 999;
-}
-
-/* Contenu principal */
-  main,
-  .main-container {
-  /* toujours laisser la place, iOS safe-area ou fallback 0 + hauteur nav */
-  margin-bottom: calc(var(--msb-height) + env(safe-area-inset-bottom, 0px));
-}
-
-  
-  .bottom-nav a {
-    flex: 1;
+ 
+  .logo h1 {
+    justify-content: center;
     text-align: center;
-    color: var(--primary-color);
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 0.75rem;
-    gap: 0.15rem;
-    padding: 0.25rem 0;
-    transition: all 0.2s ease;
-    position: relative;
   }
-  
-  .bottom-nav a i {
-    font-size: 1.25rem;
-    transition: transform 0.2s ease;
-  }
-  
-  .bottom-nav a span {
-    font-weight: 500;
-    font-size: 0.72rem;
-  }
-  
-  .bottom-nav a:active i {
-    transform: scale(1.2);
-  }
-  
-  .bottom-nav a.active,
-  .bottom-nav a:hover {
-    color: var(--accent-color);
-  }
-  
-  .bottom-nav a.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    height: 3px;
-    width: 30%;
-    border-radius: 3px;
-    background-color: var(--accent-color);
-    transition: width 0.3s ease;
-  }
-  
+
+/* 1) Agrandir la zone tactile pour atteindre ~44×44px minimum */
+header ul li a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-light);
+  padding: 0.75rem 0;           /* ← padding vertical augmenté */
+  min-height: 44px;             /* ← impose la hauteur minimale */
+  transition: color var(--transition), background var(--transition) ;
+}
+
+/* 2) Indicateur visuel plus visible de l’item actif */
+header ul li a.active,
+header ul li a:hover {
+  color: var(--primary-color);
+  background: rgba(0, 101, 252, 0.05);  /* ← léger fond au survol/actif */
+}
+
+header ul li a.active::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 3px;
+  margin: 0.25rem auto 0;
+  background: var(--primary-color);
+  border-radius: 2px;
+}
+
+/* 3) Séparer logo et menu pour dégager l’espace */
+header {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #e0e0e0;
+  z-index: 150;
+  padding: 20px 20px 4px;
+}
+
+header .logo {
+  padding: 0.75rem 0;          /* ← plus de respiration autour du logo */
+  text-align: center;
+}
+
+/* 4) Shadow subtil pour bien distinguer la barre */
+header {
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+/* 5) Passage du texte actif en font-weight plus marqué */
+header ul li a.active {
+  font-weight: 600;
+}
+
+/* ————————————————————————
+   ———————————————————————— */
   
     /* === Intro === */
     .section-intro {
