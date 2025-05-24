@@ -145,7 +145,7 @@ header nav ul li a.active::after {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     animation: fadeIn 0.8s ease;
   }
-  
+   
   .section-intro h2 {
     font-size: clamp(2rem, 5vw, 2.8rem);
     margin-bottom: 1rem;
@@ -634,6 +634,7 @@ header nav ul li a.active::after {
   line-height: 1;
   white-space: nowrap;
   transition: all 0.2s ease;
+  min-height: 40px;
 }
 
 .project-actions .btn-modal i {
