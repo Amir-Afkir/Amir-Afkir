@@ -75,11 +75,11 @@ const ICONS = {
     });
   }
   
-  
+   
   // ———————————————————————————————
   // Filtres mobile (FAB + Sheet)
   // ———————————————————————————————
-  
+   
   export function initMobileFilterSheet() {
     const fab = document.getElementById('fab-filter');
     const sheet = document.getElementById('filter-sheet');
