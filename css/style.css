@@ -980,24 +980,26 @@ header {
 
 /* ===== NAVIGATION MOBILE ===== */
 .bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: var(--msb-height);
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(8px);
-    border-top: 1px solid #e0e0e0;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 999;
-    padding: 0 0.4rem;
-  
-    /* =====> ici on gère la zone safe en bas <===== */
-    padding-bottom: max(env(safe-area-inset-bottom), 0.5rem);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--msb-height);
+  padding-bottom: env(safe-area-inset-bottom, 0.5rem);
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid #e0e0e0;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 999;
   }
+    
+  main {
+    margin-bottom: calc(var(--msb-height) + env(safe-area-inset-bottom, 0.5rem));
+    }
+
   
   .bottom-nav a {
     flex: 1;
