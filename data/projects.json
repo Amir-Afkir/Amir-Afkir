@@ -310,25 +310,6 @@
         "Veille technologique continue"
       ],
       "category": "Back-end"
-    },
-    {
-      "details": {
-        "objectif": "test",
-        "stack": "test",
-        "challenges": "test"
-      },
-      "date": "test",
-      "title": "test",
-      "tags": [
-        "test"
-      ],
-      "id": "test",
-      "image": "/images/optimized_dbz_1748098927273.webp.webp",
-      "description": "test",
-      "features": [
-        "test"
-      ],
-      "category": "CMS"
     }
   ]
 }
