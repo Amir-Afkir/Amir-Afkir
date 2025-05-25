@@ -1,0 +1,115 @@
+:root {
+  --primary-color: #0065FC;
+  --accent-color: #FFB800;
+  --text-dark: #1e1e1e;
+  --text-muted: #555;
+  --bg-white: #fff;
+  --bg-light: #f0f2f5;
+  --radius: 10px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  background: var(--bg-white);
+  color: var(--text-dark);
+  line-height: 1.6;
+  font-size: 12px;
+}
+
+.cv-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  box-sizing: border-box;
+}
+
+.cv-header {
+  margin-bottom: 0.3rem;
+}
+
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 1rem; /* réduit l'espacement entre la photo et le texte */
+}
+
+.intro-left {
+  flex: 1;
+  min-width: 250px;
+  max-width: calc(100% - 120px);
+}
+
+.intro-left h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: var(--primary-color);
+  line-height: 1.2;
+}
+
+.job-title {
+  font-weight: 600;
+  color: var(--accent-color);
+  margin: 0.2rem 0 0.4rem; /* réduit encore l'espace entre nom et sous-titre */
+}
+
+.intro-left p {
+  margin: 0.2rem 0;
+  color: var(--text-muted);
+  line-height: 1.4; /* compresse légèrement les lignes du bloc contact */
+}
+
+.intro-photo {
+  flex: 0;
+  text-align: right;
+  margin-left: auto;
+}
+
+.intro-photo img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  margin-top: 0;
+  display: block;
+  margin-left: auto;
+}
+
+h2 {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-top: 0.6rem;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.3rem;
+}
+
+ul {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+li {
+  margin-bottom: 0.25rem;
+  color: var(--text-muted);
+}
+
+.profil p,
+.section-Profil p {
+  margin: 0.4rem 0;
+}
+
+.section-Profil {
+  background: var(--bg-light);
+  padding: 1rem;
+  border-left: 4px solid var(--accent-color);
+  border-radius: var(--radius);
+  margin-top: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
