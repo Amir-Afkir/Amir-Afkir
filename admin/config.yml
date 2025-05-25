@@ -31,8 +31,10 @@ collections:
               - label: "Galerie"
                 name: "gallery"
                 widget: "list"
-                field:
-                  widget: "image"
+                fields:
+                  - label: "Image"
+                    name: "image"
+                    widget: "image"
               - { label: "Lien démo", name: "demo", widget: "string", required: false }
               - { label: "Lien code", name: "code", widget: "string", required: false }
               - { label: "Fonctionnalités", name: "features", widget: "list" }
