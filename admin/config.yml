@@ -18,63 +18,29 @@ collections:
         name: "projects"
         format: "json"
         fields:
-          - label: "ID"
-            name: "id"
-            widget: "string"
-          - label: "Titre"
-            name: "title"
-            widget: "string"
-          - label: "Description"
-            name: "description"
-            widget: "text"
-          - label: "Date"
-            name: "date"
-            widget: "string"
-          - label: "Catégorie"
-            name: "category"
-            widget: "string"
-          - label: "Image principale"
-            name: "image"
-            widget: "image"
-          - label: "Galerie"
-            name: "gallery"
+          - label: "Projets"
+            name: "projects"
             widget: "list"
-            field:
-              label: "Image"
-              name: "image"
-              widget: "image"
-          - label: "Lien démo"
-            name: "demo"
-            widget: "string"
-            required: false
-          - label: "Lien code"
-            name: "code"
-            widget: "string"
-            required: false
-          - label: "Fonctionnalités"
-            name: "features"
-            widget: "list"
-            field:
-              label: "Feature"
-              name: "feature"
-              widget: "string"
-          - label: "Tags"
-            name: "tags"
-            widget: "list"
-            field:
-              label: "Tag"
-              name: "tag"
-              widget: "string"
-          - label: "Détails"
-            name: "details"
-            widget: "object"
             fields:
-              - label: "Objectif"
-                name: "objectif"
-                widget: "text"
-              - label: "Stack"
-                name: "stack"
-                widget: "string"
-              - label: "Challenges"
-                name: "challenges"
-                widget: "text"
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Date", name: "date", widget: "string" }
+              - { label: "Catégorie", name: "category", widget: "string" }
+              - { label: "Image principale", name: "image", widget: "image" }
+              - label: "Galerie"
+                name: "gallery"
+                widget: "list"
+                field:
+                  widget: "image"
+              - { label: "Lien démo", name: "demo", widget: "string", required: false }
+              - { label: "Lien code", name: "code", widget: "string", required: false }
+              - { label: "Fonctionnalités", name: "features", widget: "list" }
+              - { label: "Tags", name: "tags", widget: "list" }
+              - label: "Détails"
+                name: "details"
+                widget: "object"
+                fields:
+                  - { label: "Objectif", name: "objectif", widget: "text" }
+                  - { label: "Stack", name: "stack", widget: "string" }
+                  - { label: "Challenges", name: "challenges", widget: "text" }
