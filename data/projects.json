@@ -256,8 +256,7 @@
               "accessibilité"
             ],
             "category": "Front-end",
-            "image": "./images/kasa/kasa.webp",
-            "demo": "https://amir-afkir.github.io/kasa/",
+            "image": "./images/kasa/kasa.webp", 
             "code": "https://github.com/Amir-Afkir/kasa",
             "gallery": [
               "./images/kasa/kasa1.webp",
