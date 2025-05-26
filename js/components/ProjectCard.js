@@ -2,10 +2,9 @@ export function renderProjectCard(project) {
   const container = document.getElementById('project-container');
   const card = document.createElement('article');
   card.className = 'project-card';
-  card.setAttribute('role', 'group');
   card.setAttribute('aria-labelledby', `project-title-${project.id}`);
   card.innerHTML = `
-    <img src="${project.image}" alt="${project.title}">
+    <img src="${project.image}" alt="Aperçu du projet ${project.title}">
     <div class="project-info">
       <h3 id="project-title-${project.id}">${project.title}</h3>
       <p>${project.description}</p>
