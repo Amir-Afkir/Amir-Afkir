@@ -729,6 +729,7 @@ header nav ul li a.active::after {
     max-height: 300px;
     border-radius: 8px;
     flex-shrink: 0;
+    object-fit:contain;
   }
 
 /* ======== COMPÉTENCES ======== */
