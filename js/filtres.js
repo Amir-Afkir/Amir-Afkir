@@ -37,6 +37,7 @@ const ICONS = {
   // ———————————————————————————————
   
   export function generateCategoryFilters(projects) {
+    projects.sort((a, b) => b.date.localeCompare(a.date));
     const filterList = document.querySelector('.project-filters');
     const categories = [...new Set(projects.map(p => p.category))];
   
@@ -55,10 +56,11 @@ const ICONS = {
   
     function applyFilter(category) {
       container.innerHTML = '';
-      const filtered = category === 'all'
+        const filtered = (category === 'all'
         ? projects
-        : projects.filter(p => p.category.toLowerCase() === category);
-  
+        : projects.filter(p => p.category.toLowerCase() === category)
+        ).sort((a, b) => b.date.localeCompare(a.date));
+
       filtered.forEach(p => {
         renderCard(p);
         renderModal(p);
