@@ -452,6 +452,24 @@ header nav ul li a.active::after {
     border-color: var(--primary-color);
     box-shadow: 0 4px 12px rgba(0, 101, 252, 0.3);
   }
+
+  .badge.status {
+    font-size: 0.75rem;
+    padding: 0.2em 0.5em;
+    border-radius: 12px;
+    display: inline-block;
+    margin-right: 0.5em;
+  }
+
+.badge.done {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.badge.ongoing {
+  background-color: #fef9c3;
+  color: #92400e;
+}
   
   /* ========
      4) Animations
@@ -1286,3 +1304,19 @@ header ul li a.active {
 
 
   
+.project-image {
+  position: relative;
+  display: inline-block;
+}
+
+.project-image .badge.status {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 2;
+  background: #fff;
+  padding: 0.3em 0.6em;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}

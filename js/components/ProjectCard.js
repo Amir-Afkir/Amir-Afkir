@@ -3,8 +3,16 @@ export function renderProjectCard(project) {
   const card = document.createElement('article');
   card.className = 'project-card';
   card.setAttribute('aria-labelledby', `project-title-${project.id}`);
+
+  const statusBadge = !project.date
+    ? '<span class="badge status ongoing">🟡 En cours</span>'
+    : '';
+
   card.innerHTML = `
-    <img src="${project.image}" alt="Aperçu du projet ${project.title}">
+    <div class="project-image">
+      <img src="${project.image}" alt="Aperçu du projet ${project.title}">
+      ${statusBadge}
+    </div>
     <div class="project-info">
       <h3 id="project-title-${project.id}">${project.title}</h3>
       <p>${project.description}</p>
