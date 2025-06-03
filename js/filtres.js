@@ -8,6 +8,7 @@ const ICONS = {
   CMS: 'fas fa-database',
   'Front-end': 'fas fa-paint-brush',
   'Back-end': 'fas fa-cogs',
+  'Full-stack': 'fas fa-code-branch',
   SEO: 'fas fa-search',
   Jeux: 'fas fa-gamepad',
   default: 'fas fa-globe',
