@@ -42,7 +42,7 @@
         "id": "Zerana",
         "title": "Zerana",
         "description": "Jeu d'action immersif ancré dans la géographie réelle, où le joueur évolue dans un monde post-apocalyptique en constante mutation. Grâce à une architecture modulaire et une génération procédurale avancée, chaque session de jeu offre un environnement unique et évolutif, mêlant exploration, survie et stratégie.",
-            "features": [
+        "features": [
             "Création de personnage",
             "Carte générée dynamiquement avec Mapbox",
             "Construction de bâtiments modulaires"
@@ -297,7 +297,7 @@
         "image": "./images/menu-maker/menu-maker.webp",
         "code": "https://github.com/Amir-Afkir/menu-marker",
         "gallery": [
-            "./images/menu-maker/menu-maker-1.webp",
+            "F./images/menu-maker/menu-maker-1.webp",
             "./images/menu-maker/menu-maker-2.webp",
             "./images/menu-maker/menu-maker-3.webp",
             "./images/menu-maker/menu-maker-4.webp",
@@ -307,6 +307,41 @@
             "objectif": "Structurer le développement d’une application web dédiée aux restaurateurs pour créer et gérer leurs menus numériques.",
             "stack": "Figma, Notion, Word, Trello, Miro, Feedly",
             "challenges": "Rédiger une documentation fonctionnelle claire, établir un backlog complet, découper et estimer les tâches en user stories, concevoir l’arborescence technique, et maintenir une veille produit continue. Un vrai exercice de pilotage projet et de synthèse technique."
+        }
+    },
+    {
+        "id": "riveltime",
+        "title": "Riveltime",
+        "description": "Application web de livraison à domicile avec une architecture multi-profils (client, vendeur, livreur). Développement full JavaScript avec React et Node.js, orienté PWA, conçu pour une mise en production réaliste et scalable.",
+        "features": [
+            "Architecture multi-profils avec rôles distincts",
+            "Système de panier, commandes et suivi en temps réel",
+            "Intégration Stripe pour les paiements sécurisés"
+        ],
+        "date": "",
+        "tags": [
+            "fullstack",
+            "pwa",
+            "react",
+            "nodejs",
+            "express",
+            "mongodb",
+            "stripe",
+            "auth",
+            "responsive",
+            "gestion-des-rôles",
+            "livraison",
+            "multi-profil"
+        ],
+        "category": "Full-stack",
+        "image": "./images/riveltime/riveltime.webp",
+        "code": "https://github.com/Amir-Afkir/riveltime",
+        "gallery": [
+        ],
+        "details": {
+            "objectif": "Développer une plateforme de mise en relation entre commerçants, livreurs et clients pour dynamiser les circuits courts en zone urbaine.",
+            "stack": "React, Node.js, Express, MongoDB Atlas, Stripe API, Vite, CSS Modules",
+            "challenges": "Gérer des interfaces et permissions distinctes pour chaque rôle utilisateur, assurer la sécurité des échanges et des paiements, optimiser les performances pour une PWA, et concevoir une architecture modulaire facilement maintenable."
         }
     }
 ]
