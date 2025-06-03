@@ -39,10 +39,10 @@
         }
     },
     {
-        "id": "zombieworld",
-        "title": "ZombieWorld",
-        "description": "Jeu d'action immersif reposant sur la géographie réelle. Le joueur explore une carte infinie en temps réel, construite dynamiquement grâce aux données Mapbox, et affronte des hordes de zombies. Gameplay modulaire et génération procédurale.",
-        "features": [
+        "id": "Zerana",
+        "title": "Zerana",
+        "description": "Jeu d'action immersif ancré dans la géographie réelle, où le joueur évolue dans un monde post-apocalyptique en constante mutation. Grâce à une architecture modulaire et une génération procédurale avancée, chaque session de jeu offre un environnement unique et évolutif, mêlant exploration, survie et stratégie.",
+            "features": [
             "Création de personnage",
             "Carte générée dynamiquement avec Mapbox",
             "Construction de bâtiments modulaires"
@@ -60,15 +60,15 @@
             "performance"
         ],
         "category": "Jeux",
-        "image": "./images/zombieworld/zombieworld.webp",
+        "image": "./images/Zerana/Zerana.webp",
         "demo": "https://playcanv.as/p/d40a9811/",
-        "code": "https://playcanvas.com/project/1245784/overview/zombieworld",
+        "code": "https://playcanvas.com/project/1245784/overview/Zerana",
         "gallery": [
-            "./images/zombieworld/zombieworld1.webp",
-            "./images/zombieworld/zombieworld2.webp",
-            "./images/zombieworld/zombieworld3.webp",
-            "./images/zombieworld/zombieworld4.webp",
-            "./images/zombieworld/zombieworld5.webp"
+            "./images/Zerana/Zerana1.webp",
+            "./images/Zerana/Zerana2.webp",
+            "./images/Zerana/Zerana3.webp",
+            "./images/Zerana/Zerana4.webp",
+            "./images/Zerana/Zerana5.webp"
         ],
         "details": {
             "objectif": "Créer une expérience de jeu unique et évolutive sur une carte illimitée basée sur la Terre réelle.",
