@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soutenir le projet Zerana</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 2rem;
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    .secure {
+      color: green;
+      font-weight: 600;
+    }
+    input[type="number"] {
+      padding: 0.6rem;
+      width: 100%;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 0.8rem 1.5rem;
+      font-size: 1.1rem;
+      background-color: #0070f3;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #005bd1;
+    }
+    .logos {
+      margin-top: 1.5rem;
+    }
+    .logos i {
+      font-size: 2rem;
+      margin: 0 0.5rem;
+      color: #666;
+    }
+    footer {
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Paiement sécurisé d'une prestation</h1>
+    <p>
+        Merci de régler le montant convenu pour votre prestation ci-dessous.<br/>
+      <strong>Vous pouvez saisir librement le montant.</strong>
+    </p>
+    <p>
+      <span class="secure"><i class="fas fa-lock"></i> Paiement 100% sécurisé</span><br/>
+    </p>
+
+    <form action="https://www.paypal.com/donate" method="get" target="_blank">
+      <input type="number" name="amount" placeholder="Montant en €" min="1" step="1" required />
+      <input type="hidden" name="hosted_button_id" value="VOTRE_ID_PAYPAL" />
+      <button type="submit">Payer maintenant</button>
+    </form>
+
+    <div class="logos">
+      <i class="fab fa-cc-visa"></i>
+      <i class="fab fa-cc-mastercard"></i>
+      <i class="fab fa-cc-paypal"></i>
+      <i class="fab fa-apple-pay"></i>
+    </div>
+
+    <footer>
+        CAMA – SASU immatriculée au RCS d'Orléans – SIRET 123 456 789 00012
+      </footer>
+  </div>
+</body>
+</html>
