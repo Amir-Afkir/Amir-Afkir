@@ -336,8 +336,8 @@
         "category": "Full-stack",
         "image": "./images/riveltime/riveltime.webp",
         "demo": "https://riveltime.app/",
-        "code": "https://github.com/Amir-Afkir/riveltime",
         "gallery": [
+            "./images/riveltime/baniere.jpeg"
         ],
         "details": {
             "objectif": "Développer une plateforme de mise en relation entre commerçants, livreurs et clients pour dynamiser les circuits courts en zone urbaine.",
