@@ -344,5 +344,49 @@
             "stack": "React, Node.js, Express, MongoDB Atlas, Stripe API, Vite, CSS Modules",
             "challenges": "Gérer des interfaces et permissions distinctes pour chaque rôle utilisateur, assurer la sécurité des échanges et des paiements, optimiser les performances pour une PWA, et concevoir une architecture modulaire facilement maintenable."
         }
+    },
+    {
+        "id": "lejardindeden",
+        "title": "Le Jardin d’Eden",
+        "description": "Site vitrine premium pour un paysagiste orléanais. Architecture Next.js 15 (App Router) orientée performance et accessibilité : Hero LCP optimisé, navigation mobile accessible (pills), carte de zone d’intervention Mapbox et mur social TikTok dynamique.",
+        "features": [
+            "Next.js 15 (App Router) + RSC",
+            "Mur social TikTok (embed lazy, script conditionnel)",
+            "Formulaire de contact validé côté client + endpoint API"
+        ],
+        "date": "2025-09-15",
+        "tags": [
+            "nextjs",
+            "react",
+            "typescript",
+            "tailwind",
+            "app-router",
+            "rsc",
+            "mapbox",
+            "tiktok-embed",
+            "performance",
+            "seo",
+            "accessibilité",
+            "web-vitals",
+            "ui-ux",
+            "responsive"
+        ],
+        "category": "Front-end",
+        "image": "./images/lejardindeden/lejardindeden.svg", 
+        "demo": "https://jardindeden.netlify.app/",
+        "code": "https://github.com/Amir-Afkir/Jardin-d-Eden",
+        "gallery": [
+            "./images/lejardindeden/hero.webp",
+            "./images/lejardindeden/projets.webp", 
+            "./images/lejardindeden/tiktok.webp",
+            "./images/lejardindeden/couverture-map.webp",
+            "./images/lejardindeden/contact.webp",
+            "./images/lejardindeden/footer.webp"
+        ],
+        "details": {
+            "objectif": "Présenter clairement les prestations et capter des leads qualifiés via un design premium et des performances exemplaires.",
+            "stack": "Next.js 15 (App Router, RSC), TypeScript, Tailwind CSS, Mapbox GL JS, TikTok Embed, Vercel",
+            "challenges": "Obtenir un LCP rapide sur la bannière pleine largeur (images responsives + priorité), proposer une navigation mobile accessible sans menu tiroir, intégrer Mapbox en évitant les pièges SSR, charger TikTok uniquement si nécessaire, et garder une cohérence UI/UX ‘haut de gamme’ sur mobile et desktop."
+        }
     }
 ]
