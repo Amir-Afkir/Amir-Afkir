@@ -318,7 +318,7 @@
             "Système de panier, commandes et suivi en temps réel",
             "Intégration Stripe pour les paiements sécurisés"
         ],
-        "date": "",
+        "date": "2026-05-01",
         "tags": [
             "fullstack",
             "pwa",
@@ -337,7 +337,11 @@
         "image": "./images/riveltime/riveltime.webp",
         "demo": "https://riveltime.app/",
         "gallery": [
-            "./images/riveltime/baniere.jpeg"
+            "./images/riveltime/riveltime-1.webp",
+            "./images/riveltime/screenshot2.jpeg",
+            "./images/riveltime/screenshot3.jpeg",
+            "./images/riveltime/screenshot4.jpeg",
+            "./images/riveltime/screenshot5.jpeg"
         ],
         "details": {
             "objectif": "Développer une plateforme de mise en relation entre commerçants, livreurs et clients pour dynamiser les circuits courts en zone urbaine.",
