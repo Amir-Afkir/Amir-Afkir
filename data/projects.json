@@ -392,5 +392,48 @@
             "stack": "Next.js 15 (App Router, RSC), TypeScript, Tailwind CSS, Mapbox GL JS, TikTok Embed, Vercel",
             "challenges": "Obtenir un LCP rapide sur la bannière pleine largeur (images responsives + priorité), proposer une navigation mobile accessible sans menu tiroir, intégrer Mapbox en évitant les pièges SSR, charger TikTok uniquement si nécessaire, et garder une cohérence UI/UX ‘haut de gamme’ sur mobile et desktop."
         }
+    },
+    {
+        "id": "allo-moto",
+        "title": "Allo Moto",
+        "description": "Site web premium de location de motos avec catalogue public, fiches véhicules, tunnel de demande de réservation et back-office léger pour gérer la flotte, les demandes et les blocages de disponibilité.",
+        "features": [
+            "Catalogue motos avec disponibilité réelle",
+            "Tunnel de demande de réservation multi-étapes",
+            "Back-office admin pour flotte et demandes"
+        ],
+        "date": "2026-04-20",
+        "tags": [
+            "nextjs",
+            "react",
+            "typescript",
+            "tailwind",
+            "app-router",
+            "postgres",
+            "cloudinary",
+            "mapbox",
+            "admin",
+            "reservation",
+            "location",
+            "ui-ux",
+            "fullstack",
+            "performance"
+        ],
+        "category": "Full-stack",
+        "image": "./images/allo-moto/allo-moto.webp",
+        "demo": "https://allo-moto.netlify.app/",
+        "code": "https://github.com/Amir-Afkir/Allo-moto",
+        "gallery": [
+            "./images/allo-moto/allo-moto-1.png",
+            "./images/allo-moto/allo-moto-2.png",
+            "./images/allo-moto/allo-moto-3.png",
+            "./images/allo-moto/allo-moto-4.png",
+            "./images/allo-moto/allo-moto-5.png"
+        ],
+        "details": {
+            "objectif": "Créer un site de location de motos simple, premium et opérationnel, permettant à un client de choisir une moto, sélectionner un créneau, envoyer une demande complète, puis à l’admin de confirmer ou refuser la réservation.",
+            "stack": "Next.js 15, React 19, TypeScript strict, Tailwind CSS 4, PostgreSQL, Cloudinary, Mapbox GL",
+            "challenges": "Centraliser toute la logique métier autour d’une source de vérité unique, synchroniser le catalogue public et le back-office admin, gérer les disponibilités réelles via des blocages véhicule, concevoir un tunnel de réservation fluide sans faux paiement, et maintenir une architecture simple, scalable et facilement auditables."
+        }
     }
 ]
