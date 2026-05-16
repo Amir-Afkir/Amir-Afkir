@@ -435,5 +435,41 @@
             "stack": "Next.js 15, React 19, TypeScript strict, Tailwind CSS 4, PostgreSQL, Cloudinary, Mapbox GL",
             "challenges": "Centraliser toute la logique métier autour d’une source de vérité unique, synchroniser le catalogue public et le back-office admin, gérer les disponibilités réelles via des blocages véhicule, concevoir un tunnel de réservation fluide sans faux paiement, et maintenir une architecture simple, scalable et facilement auditables."
         }
+    },
+    {
+        "id": "dft",
+        "title": "DFT",
+        "description": "Site vitrine orienté conversion pour une entreprise de dépannage fuite toiture à Orléans. Le projet combine parcours mobile direct, SEO local et contenus métier structurés pour capter des demandes qualifiées rapidement.",
+        "features": [
+            "Landing page métier pensée pour la conversion",
+            "CTA WhatsApp direct et parcours mobile optimisé",
+            "SEO local avec données structurées et contenus ciblés"
+        ],
+        "date": "2026-05-16",
+        "tags": [
+            "html",
+            "css",
+            "javascript",
+            "seo-local",
+            "schema-org",
+            "conversion",
+            "responsive",
+            "accessibilite",
+            "lead-generation",
+            "site-vitrine"
+        ],
+        "category": "Front-end",
+        "image": "./images/dft/logo.png",
+        "demo": "https://dft45.netlify.app/",
+        "code": "https://github.com/Amir-Afkir/DFT",
+        "gallery": [
+            "./images/dft/dft-desktop.png",
+            "./images/dft/dft-mobile.png"
+        ],
+        "details": {
+            "objectif": "Présenter clairement les prestations de DFT et transformer un trafic local en prises de contact rapides via un parcours simple et rassurant.",
+            "stack": "HTML5, CSS3, JavaScript, Schema.org, SEO local",
+            "challenges": "Structurer une page dense sans perdre en lisibilité mobile, hiérarchiser les urgences métier avec des CTA immédiats, produire un contenu crédible pour la recherche locale, et garder de bonnes performances malgré une imagerie terrain riche."
+        }
     }
 ]
