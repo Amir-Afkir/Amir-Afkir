@@ -375,12 +375,12 @@
             "responsive"
         ],
         "category": "Front-end",
-        "image": "./images/lejardindeden/lejardindeden.svg", 
+        "image": "./images/lejardindeden/lejardindeden.svg",
         "demo": "https://jardindeden.netlify.app/",
         "code": "https://github.com/Amir-Afkir/Jardin-d-Eden",
         "gallery": [
             "./images/lejardindeden/hero.webp",
-            "./images/lejardindeden/projets.webp", 
+            "./images/lejardindeden/projets.webp",
             "./images/lejardindeden/tiktok.webp",
             "./images/lejardindeden/couverture-map.webp",
             "./images/lejardindeden/contact.webp",
@@ -469,6 +469,42 @@
             "objectif": "Présenter clairement les prestations de DFT et transformer un trafic local en prises de contact rapides via un parcours simple et rassurant.",
             "stack": "HTML5, CSS3, JavaScript, Schema.org, SEO local",
             "challenges": "Structurer une page dense sans perdre en lisibilité mobile, hiérarchiser les urgences métier avec des CTA immédiats, produire un contenu crédible pour la recherche locale, et garder de bonnes performances malgré une imagerie terrain riche."
+        }
+    },
+    {
+        "id": "ricochet",
+        "title": "RICOCHET",
+        "description": "Jeu d’arcade de survie en portrait basé sur les ricochets et le placement d’un prisme. Le joueur vise, tire, construit son build de mutations et tente de survivre à une pression croissante dans des parties sans limite de salves.",
+        "features": [
+            "Mode Survival sans limite de salves",
+            "Prisme déplaçable et orientable avec trajectoires physiques",
+            "6 mutations à 3 rangs, synergies, jalons et records locaux"
+        ],
+        "date": "2026-09-08",
+        "tags": [
+            "jeu",
+            "phaser",
+            "typescript",
+            "vite",
+            "capacitor",
+            "arcade",
+            "survival",
+            "physique",
+            "game-design",
+            "deterministe",
+            "mobile",
+            "vitest",
+            "playwright"
+        ],
+        "category": "Jeux",
+        "image": "./images/ricochet/icon.svg",
+        "demo": "https://ricochets.netlify.app/",
+        "gallery": ["./images/ricochet/ordinateur.png",
+                    "./images/ricochet/mobile.png"],
+        "details": {
+            "objectif": "Créer un jeu d’arcade mobile immédiatement compréhensible mais suffisamment profond pour donner envie d’enchaîner les parties, maîtriser les angles, construire des synergies et repousser progressivement ses records.",
+            "stack": "TypeScript, Phaser 3, Vite, Capacitor 8, Vitest, Playwright",
+            "challenges": "Concevoir un moteur de jeu déterministe et reproductible, équilibrer une difficulté croissante sur des runs sans fin, structurer une progression de 18 récompenses de mutation, synchroniser physique, rendu, audio et haptique, et maintenir une expérience fluide sur mobile avec une forte identité visuelle Dark Neon Prismatic."
         }
     }
 ]
