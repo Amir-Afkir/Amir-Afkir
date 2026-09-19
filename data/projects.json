@@ -506,5 +506,46 @@
             "stack": "TypeScript, Phaser 3, Vite, Capacitor 8, Vitest, Playwright",
             "challenges": "Concevoir un moteur de jeu déterministe et reproductible, équilibrer une difficulté croissante sur des runs sans fin, structurer une progression de 18 récompenses de mutation, synchroniser physique, rendu, audio et haptique, et maintenir une expérience fluide sur mobile avec une forte identité visuelle Dark Neon Prismatic."
         }
+    },
+    {
+        "id": "elevn",
+        "title": "Elevn",
+        "description": "Réseau social football développé avec Phoenix LiveView, pensé pour connecter supporters, joueurs, coachs, agents, scouts et clubs autour d’un feed, d’un espace Mercato, d’une messagerie et d’outils de modération.",
+        "features": [
+            "Feed social, profils football et interactions communautaires",
+            "Mercato avec recherche, filtres et pipeline de recrutement",
+            "Messagerie, notifications et modération globale"
+        ],
+        "date": "2026-09-19",
+        "tags": [
+            "elixir",
+            "phoenix",
+            "liveview",
+            "postgresql",
+            "ecto",
+            "oban",
+            "redis",
+            "fullstack",
+            "reseau-social",
+            "football",
+            "messagerie",
+            "notifications",
+            "moderation",
+            "pwa",
+            "responsive",
+            "securite"
+        ],
+        "category": "Full-stack",
+        "image": "./images/elevn/elevn.png",
+        "demo": "https://elevn-zab7.onrender.com/",
+        "gallery": [
+            "./images/elevn/ordinateur.png",
+            "./images/elevn/mobile.png"
+        ],
+        "details": {
+            "objectif": "Créer un réseau social spécialisé football, capable de transformer les échanges, profils et preuves terrain en opportunités utiles pour les joueurs, coachs, agents, scouts, clubs et supporters.",
+            "stack": "Elixir, Phoenix LiveView, PostgreSQL, Ecto, Oban, Redis, JavaScript, CSS, Render",
+            "challenges": "Structurer une application temps réel complète avec authentification, rôles métier, feed, commentaires, likes, messagerie, notifications, recherche, modération et centre d’administration, tout en gardant une expérience mobile-first fluide et une séparation claire entre permissions publiques, staff interne, stockage média et intégration Riveltime côté serveur."
+        }
     }
 ]
