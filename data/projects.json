@@ -175,7 +175,7 @@
             "balises-meta"
         ],
         "category": "Front-end",
-        "image": "./images/nina-carducci/nina-carducci.webp",
+        "image": "./images/nina-carducci/nina-carducci-1.webp",
         "demo": "https://amir-afkir.github.io/nina-carducci/",
         "code": "https://github.com/Amir-Afkir/Nina-Carducci",
         "gallery": [
@@ -215,7 +215,7 @@
             "accessibilité"
         ],
         "category": "Front-end",
-        "image": "./images/kasa/kasa.webp",
+        "image": "./images/kasa/kasa1.webp",
         "code": "https://github.com/Amir-Afkir/kasa",
         "gallery": [
             "./images/kasa/kasa1.webp",
@@ -375,7 +375,7 @@
             "responsive"
         ],
         "category": "Front-end",
-        "image": "./images/lejardindeden/lejardindeden.svg",
+        "image": "./images/lejardindeden/projets.webp",
         "demo": "https://jardindeden.netlify.app/",
         "code": "https://github.com/Amir-Afkir/Jardin-d-Eden",
         "gallery": [
@@ -458,7 +458,7 @@
             "site-vitrine"
         ],
         "category": "Front-end",
-        "image": "./images/dft/Logo.png",
+        "image": "./images/dft/dft-mobile.png",
         "demo": "https://dft45.netlify.app/",
         "code": "https://github.com/Amir-Afkir/DFT",
         "gallery": [
@@ -536,7 +536,7 @@
             "securite"
         ],
         "category": "Full-stack",
-        "image": "./images/elevn/elevn.png",
+        "image": "./images/elevn/mobile.png",
         "demo": "https://elevn-zab7.onrender.com/",
         "gallery": [
             "./images/elevn/ordinateur.png",
