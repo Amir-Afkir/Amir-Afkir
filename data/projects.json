@@ -23,14 +23,14 @@
             "chef-de-projet"
         ],
         "category": "CMS",
-        "image": "./images/Camabike/camabike.webp",
+        "image": "./images/camabike/camabike.webp",
         "demo": "https://camabike.com",
         "gallery": [
-            "./images/Camabike/camabike1.webp",
-            "./images/Camabike/camabike2.webp",
-            "./images/Camabike/camabike3.webp",
-            "./images/Camabike/camabike4.webp",
-            "./images/Camabike/camabike5.webp"
+            "./images/camabike/camabike1.webp",
+            "./images/camabike/camabike2.webp",
+            "./images/camabike/camabike3.webp",
+            "./images/camabike/camabike4.webp",
+            "./images/camabike/camabike5.webp"
         ],
         "details": {
             "objectif": "Vendre des produits de mobilité urbaine",
@@ -296,7 +296,7 @@
         "image": "./images/menu-maker/menu-maker.webp",
         "code": "https://github.com/Amir-Afkir/menu-marker",
         "gallery": [
-            "F./images/menu-maker/menu-maker-1.webp",
+            "./images/menu-maker/menu-maker-1.webp",
             "./images/menu-maker/menu-maker-2.webp",
             "./images/menu-maker/menu-maker-3.webp",
             "./images/menu-maker/menu-maker-4.webp",
@@ -458,7 +458,7 @@
             "site-vitrine"
         ],
         "category": "Front-end",
-        "image": "./images/dft/logo.png",
+        "image": "./images/dft/Logo.png",
         "demo": "https://dft45.netlify.app/",
         "code": "https://github.com/Amir-Afkir/DFT",
         "gallery": [
