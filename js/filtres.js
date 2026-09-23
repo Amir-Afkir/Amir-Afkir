@@ -1,9 +1,3 @@
-// fichier : ./js/filtres.js (version ES Module optimisée)
-
-// ———————————————————————————————
-// Constantes et références DOM partagées
-// ———————————————————————————————
-
 const ICONS = {
   CMS: 'fas fa-database',
   'Front-end': 'fas fa-paint-brush',
@@ -14,125 +8,144 @@ const ICONS = {
   default: 'fas fa-globe',
 };
 
-const getFilterButton = category => {
-  const li = document.createElement('li');
-  li.dataset.filter = category.toLowerCase();
-  li.innerHTML = `<i class="${ICONS[category] || ICONS.default}"></i><span>${category}</span>`;
-  return li;
-};
-
-const syncActiveFilter = (from, to) => {
-  const active = from.querySelector('li.active');
-  if (active) {
-    to.querySelector('li.active')?.classList.remove('active');
-    to.querySelector(`li[data-filter="${active.dataset.filter}"]`)?.classList.add('active');
-  }
-};
-
 const sortByDate = (a, b) => {
   if (!a.date && b.date) return -1;
   if (a.date && !b.date) return 1;
   return b.date?.localeCompare(a.date || '') || 0;
 };
 
+const createFilterItem = category => {
+  const value = category === 'Tous' ? 'all' : category.toLowerCase();
+  const item = document.createElement('li');
+  item.dataset.filter = value;
+
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'filter-button';
+  button.dataset.filter = value;
+  button.setAttribute('aria-pressed', 'false');
+  button.innerHTML =
+    `<i class="${ICONS[category] || ICONS.default}" aria-hidden="true"></i><span>${category}</span>`;
+
+  item.appendChild(button);
+  return item;
+};
+
+const setActiveFilter = (list, category) => {
+  list.querySelectorAll('li').forEach(item => {
+    const active = item.dataset.filter === category;
+    item.classList.toggle('active', active);
+    item.querySelector('button')?.setAttribute('aria-pressed', String(active));
+  });
+};
+
+const syncActiveFilter = (from, to) => {
+  const active = from.querySelector('li.active')?.dataset.filter || 'all';
+  setActiveFilter(to, active);
+};
+
 export function generateCategoryFilters(projects) {
   projects.sort(sortByDate);
   const filterList = document.querySelector('.project-filters');
-  const categories = [...new Set(projects.map(p => p.category))];
+  if (!filterList) return;
 
-  filterList.innerHTML = '';
-  const allBtn = getFilterButton('Tous');
-  allBtn.classList.add('active');
-  allBtn.dataset.filter = 'all';
-  filterList.appendChild(allBtn);
+  const categories = [...new Set(projects.map(project => project.category))];
+  filterList.replaceChildren();
 
-  categories.forEach(cat => filterList.appendChild(getFilterButton(cat)));
+  const all = createFilterItem('Tous');
+  all.classList.add('active');
+  all.querySelector('button')?.setAttribute('aria-pressed', 'true');
+  filterList.appendChild(all);
+
+  categories.forEach(category => filterList.appendChild(createFilterItem(category)));
 }
 
-export function setupCategoryFilterListeners(projects, renderCard, renderModal, setupModals) {
+export function setupCategoryFilterListeners(projects, renderCard) {
   const container = document.getElementById('project-container');
+  const filterList = document.querySelector('.project-filters');
+  if (!container || !filterList) return;
 
   const applyFilter = category => {
-    container.innerHTML = '';
-    const filtered = (category === 'all' ? projects : projects.filter(p => p.category.toLowerCase() === category)).sort(sortByDate);
-    filtered.forEach(p => {
-      renderCard(p);
-      renderModal(p);
-    });
-    setupModals();
+    const filtered = (category === 'all'
+      ? projects
+      : projects.filter(project => project.category.toLowerCase() === category)
+    ).sort(sortByDate);
+
+    container.replaceChildren();
+    filtered.forEach(renderCard);
   };
 
-  document.querySelectorAll('.project-filters li').forEach(btn =>
-    btn.addEventListener('click', () => {
-      document.querySelector('.project-filters li.active')?.classList.remove('active');
-      btn.classList.add('active');
-      applyFilter(btn.dataset.filter);
-    })
-  );
+  filterList.addEventListener('click', event => {
+    const button = event.target.closest('.filter-button');
+    if (!button) return;
+
+    setActiveFilter(filterList, button.dataset.filter);
+    applyFilter(button.dataset.filter);
+  });
 }
 
 export function initMobileFilterSheet() {
   const fab = document.getElementById('fab-filter');
   const sheet = document.getElementById('filter-sheet');
   const backdrop = document.getElementById('filter-backdrop');
-  const closeBtn = document.getElementById('filter-close');
-  const sidebar = document.querySelector('.project-sidebar .project-filters');
+  const closeButton = document.getElementById('filter-close');
+  const desktopList = document.querySelector('.project-sidebar .project-filters');
   const sheetList = document.querySelector('.sheet-filters');
-  const projetsSec = document.getElementById('projets');
+  const projectsSection = document.getElementById('projets');
 
-  if (![fab, sheet, backdrop, closeBtn, sidebar, sheetList, projetsSec].every(Boolean)) return;
+  if (![fab, sheet, backdrop, closeButton, desktopList, sheetList, projectsSection].every(Boolean)) return;
 
-  sheetList.innerHTML = sidebar.innerHTML;
+  fab.hidden = false;
+  sheet.hidden = true;
+  sheet.setAttribute('aria-hidden', 'true');
+  sheetList.innerHTML = desktopList.innerHTML;
 
-  new IntersectionObserver(([entry]) => {
-    fab.classList.toggle('show', entry.isIntersecting);
-  }, { rootMargin: '-100px' }).observe(projetsSec);
+  const observer = new IntersectionObserver(([entry]) => {
+    fab.classList.toggle('show', entry.isIntersecting && sheet.hidden);
+  }, { rootMargin: '-100px' });
+  observer.observe(projectsSection);
 
-  const lockBody = () => document.body.classList.add('no-scroll');
-  const unlockBody = () => document.body.classList.remove('no-scroll');
-
-  const closeSheet = () => {
-    unlockBody();
+  const closeSheet = ({ restoreFocus = true } = {}) => {
+    document.body.classList.remove('no-scroll');
     sheet.classList.remove('show');
     sheet.setAttribute('aria-hidden', 'true');
-    sheet.addEventListener('transitionend', () => {
-      sheet.hidden = true;
-      backdrop.classList.remove('show');
-      document.removeEventListener('click', outsideClickHandler);
-      fab.classList.add('show');
-    }, { once: true });
+    backdrop.classList.remove('show');
+    sheet.hidden = true;
+    fab.classList.add('show');
+    if (restoreFocus) fab.focus();
   };
 
   const openSheet = () => {
-    lockBody();
+    document.body.classList.add('no-scroll');
     backdrop.classList.add('show');
     fab.classList.remove('show');
     sheet.hidden = false;
+    syncActiveFilter(desktopList, sheetList);
+
     requestAnimationFrame(() => {
       sheet.classList.add('show');
       sheet.setAttribute('aria-hidden', 'false');
+      closeButton.focus();
     });
-    syncActiveFilter(sidebar, sheetList);
-    document.addEventListener('click', outsideClickHandler);
-    if (closeBtn.offsetParent !== null) closeBtn.focus();
   };
 
-  const outsideClickHandler = e => {
-    if (!sheet.contains(e.target) && !fab.contains(e.target)) closeSheet();
-  };
+  fab.addEventListener('click', () => sheet.hidden ? openSheet() : closeSheet());
+  closeButton.addEventListener('click', () => closeSheet());
+  backdrop.addEventListener('click', () => closeSheet());
 
-  fab.addEventListener('click', () => (sheet.hidden || !sheet.classList.contains('show') ? openSheet() : closeSheet()));
-  closeBtn.addEventListener('click', closeSheet);
-  document.addEventListener('keydown', e => e.key === 'Escape' && !sheet.hidden && closeSheet());
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !sheet.hidden) closeSheet();
+  });
 
-  sheetList.querySelectorAll('li').forEach(li => {
-    li.addEventListener('click', e => {
-      e.stopPropagation();
-      sheetList.querySelector('li.active')?.classList.remove('active');
-      li.classList.add('active');
-      document.removeEventListener('click', outsideClickHandler);
-      document.querySelector(`.project-filters li[data-filter="${li.dataset.filter}"]`)?.click();
-      setTimeout(() => document.addEventListener('click', outsideClickHandler), 0);
-    });
+  sheetList.addEventListener('click', event => {
+    const button = event.target.closest('.filter-button');
+    if (!button) return;
+
+    setActiveFilter(sheetList, button.dataset.filter);
+    const desktopButton = desktopList.querySelector(
+      `.filter-button[data-filter="${CSS.escape(button.dataset.filter)}"]`
+    );
+    desktopButton?.click();
+    closeSheet({ restoreFocus: false });
   });
 }
