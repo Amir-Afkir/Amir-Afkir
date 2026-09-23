@@ -10,8 +10,37 @@ const warnings = [];
 const ids = new Set();
 
 const localPath = value => {
-  if (!value || /^https?:\/\//i.test(value) || value.startsWith('#')) return null;
-  return value.replace(/^\.\//, '').replace(/^\//, '');
+  if (
+    !value ||
+    /^https?:\/\//i.test(value) ||
+    /^(mailto:|tel:|data:|javascript:)/i.test(value) ||
+    value.startsWith('#')
+  ) return null;
+
+  const clean = value.split('#')[0].split('?')[0];
+  const relative = clean.replace(/^\.\//, '').replace(/^\//, '');
+  return relative || null;
+};
+
+const verifyLocalAsset = (context, value) => {
+  const relative = localPath(value);
+  if (!relative) return;
+
+  if (relative.startsWith('F.')) {
+    errors.push(`${context} : chemin suspect = ${value}`);
+    return;
+  }
+
+  const absolute = path.join(root, relative);
+  if (!fs.existsSync(absolute)) {
+    errors.push(`${context} : asset introuvable = ${value}`);
+    return;
+  }
+
+  const stat = fs.statSync(absolute);
+  if (stat.isFile() && stat.size > 1_000_000) {
+    warnings.push(`Asset lourd (${(stat.size / 1_000_000).toFixed(1)} Mo) : ${relative}`);
+  }
 };
 
 for (const project of projects) {
@@ -22,36 +51,24 @@ for (const project of projects) {
   if (!project.title) errors.push(`Projet ${project.id || '?'} : titre manquant.`);
   if (!project.category) errors.push(`Projet ${project.id || '?'} : catégorie manquante.`);
 
-  const refs = [
-    ['image', project.image],
-    ...(project.gallery || []).map((value, index) => [`gallery[${index}]`, value]),
-  ];
+  verifyLocalAsset(`Projet ${project.id} / image`, project.image);
+  (project.gallery || []).forEach((value, index) => {
+    verifyLocalAsset(`Projet ${project.id} / gallery[${index}]`, value);
+  });
+}
 
-  for (const [label, value] of refs) {
-    const relative = localPath(value);
-    if (!relative) continue;
+for (const htmlFile of ['index.html', 'cv.html']) {
+  const html = fs.readFileSync(path.join(root, htmlFile), 'utf8');
+  const references = html.matchAll(/\b(?:src|href)=["']([^"']+)["']/g);
 
-    if (relative.startsWith('F.')) {
-      errors.push(`Projet ${project.id} : chemin suspect ${label} = ${value}`);
-      continue;
-    }
-
-    const absolute = path.join(root, relative);
-    if (!fs.existsSync(absolute)) {
-      errors.push(`Projet ${project.id} : asset introuvable ${label} = ${value}`);
-      continue;
-    }
-
-    const size = fs.statSync(absolute).size;
-    if (size > 1_000_000) {
-      warnings.push(`Asset lourd (${(size / 1_000_000).toFixed(1)} Mo) : ${relative}`);
-    }
+  for (const match of references) {
+    verifyLocalAsset(`${htmlFile} / référence locale`, match[1]);
   }
 }
 
 if (warnings.length) {
   console.warn('\nAvertissements :');
-  warnings.forEach(message => console.warn(`- ${message}`));
+  [...new Set(warnings)].forEach(message => console.warn(`- ${message}`));
 }
 
 if (errors.length) {
