@@ -1,5 +1,3 @@
-// fichier : ./js/main.js (point d’entrée global ES Module)
-
 import { setupActiveScrollNavigation } from './menu.js';
 import {
   generateCategoryFilters,
@@ -7,41 +5,31 @@ import {
   initMobileFilterSheet
 } from './filtres.js';
 import { renderProjectCard } from './components/ProjectCard.js';
-import { renderProjectModal } from './components/ProjectModal.js';
 import { setupModalListeners } from './components/ModalListeners.js';
 import { setupContactFormValidation } from './components/FormValidation.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  // 1) Initialisations globales
   setupActiveScrollNavigation();
   setupContactFormValidation();
 
-  // 2) Chargement des projets
   try {
-    const res = await fetch('./data/projects.json');
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const projects = await res.json();
+    const response = await fetch('./data/projects.json');
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
-    // 3) Génération des filtres et listeners
+    const projects = await response.json();
+
     generateCategoryFilters(projects);
-    setupCategoryFilterListeners(
-      projects,
-      renderProjectCard,
-      renderProjectModal,
-      setupModalListeners
-    );
+    setupCategoryFilterListeners(projects, renderProjectCard);
     initMobileFilterSheet();
+    setupModalListeners(projects);
 
-    // 4) Rendu initial (tous les projets)
     projects.forEach(renderProjectCard);
-    projects.forEach(renderProjectModal);
-    setupModalListeners();
-
-  } catch (err) {
-    console.error('Erreur de chargement JSON :', err);
+  } catch (error) {
+    console.error('Erreur de chargement des projets :', error);
     const container = document.getElementById('project-container');
     if (container) {
-      container.innerHTML = '<p class="error">Impossible de charger les projets. Veuillez réessayer plus tard.</p>';
+      container.innerHTML =
+        '<p class="error" role="alert">Impossible de charger les projets. Veuillez réessayer plus tard.</p>';
     }
   }
 });
