@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "validate": "node scripts/validate-projects.mjs",
+    "optimize:images": "node js/utils/dom.js"
+  },
   "dependencies": {
     "sharp": "^0.34.2"
   }
